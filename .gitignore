@@ -1,0 +1,8 @@
+.DS_Store
+.idea
+node_modules/
+dist/
+doc/
+*.log
+
+src/components/WebGLBase
