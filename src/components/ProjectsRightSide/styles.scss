@@ -1,0 +1,20 @@
+@import '~stylesheets/common/variables';
+
+.projectsRightSide {
+  flex:1;
+  background-color:$white-athens;
+}
+
+.projectsRightSide__wrapper {
+  width:62%;
+  margin:0 auto;
+}
+
+.projectsRightSide__selectedNumber {
+  font-family:$font-primary;
+  font-weight:600;
+  font-size:0.9375rem;
+  color:$gray-mine-shaft;
+  margin-top:70px;
+  display:block;
+}

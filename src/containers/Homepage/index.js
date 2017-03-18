@@ -10,6 +10,8 @@ import {
 } from 'config/messages';
 
 import LogoLoader from 'components/LogoLoader';
+import ProjectsLeftSide from 'components/ProjectsLeftSide';
+import ProjectsRightSide from 'components/ProjectsRightSide';
 
 export default Vue.extend({
 
@@ -44,6 +46,8 @@ export default Vue.extend({
   },
 
   components: {
-    'logo-loader': LogoLoader
+    'logo-loader': LogoLoader,
+    'projects-left-side': ProjectsLeftSide,
+    'projects-right-side': ProjectsRightSide
   }
 });
