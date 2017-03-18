@@ -1,0 +1,30 @@
+@import '~stylesheets/common/variables';
+
+.logoLoader {
+  background-color:$black-mine-shaft;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.logoLoader__logo {
+  font-family:$font-logo;
+  font-weight:700;
+  font-size:2.875rem;
+  color:$gray-mine-shaft;
+
+  animation-name:pulse;
+  animation-duration:3000ms;
+  animation-iteration-count:infinite;
+  animation-delay:4000ms;
+}
+
+.logoLoader__container {
+  opacity:0;
+
+  animation-name:fade-in;
+  animation-duration:700ms;
+  animation-fill-mode:forwards;
+  animation-delay:2000ms;
+}

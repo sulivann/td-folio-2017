@@ -24,7 +24,7 @@ class Router extends VueRouter {
 
     this.map({
 
-      '*': {
+      '/': {
         name: "home",
         component: HomePageComponent
       }

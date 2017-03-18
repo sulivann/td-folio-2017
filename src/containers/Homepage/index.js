@@ -3,17 +3,17 @@
 import './styles.scss';
 
 import EventManagerMixin from 'mixins/EventManagerMixin';
-import FadeTransitionMixin from 'mixins/FadeTransitionMixin';
+import FadeLoaderMixin from 'mixins/FadeLoaderMixin';
 
 import {
   WINDOW_RESIZE
 } from 'config/messages';
 
-import ExampleComponent from 'components/Example';
+import LogoLoader from 'components/LogoLoader';
 
 export default Vue.extend({
 
-  mixins: [ EventManagerMixin, FadeTransitionMixin ],
+  mixins: [ EventManagerMixin, FadeLoaderMixin ],
 
   template: require( './template.html' ),
 
@@ -44,6 +44,6 @@ export default Vue.extend({
   },
 
   components: {
-    'example-component': ExampleComponent
+    'logo-loader': LogoLoader
   }
 });

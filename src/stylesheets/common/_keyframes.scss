@@ -1,0 +1,17 @@
+@keyframes pulse {
+  0% {
+    color:$gray-mine-shaft;
+  }
+  50% {
+    color:$color-white;;
+  }
+  100% {
+    color:$gray-mine-shaft;
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity:1;
+  }
+}
