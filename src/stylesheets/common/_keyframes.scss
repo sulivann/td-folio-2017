@@ -15,3 +15,15 @@
     opacity:1;
   }
 }
+
+@keyframes slide-home-right {
+  to {
+    width:37%;
+  }
+}
+
+@keyframes slide-out-home {
+  to {
+    transform:translateX(100%);
+  }
+}

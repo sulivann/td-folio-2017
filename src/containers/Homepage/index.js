@@ -3,7 +3,7 @@
 import './styles.scss';
 
 import EventManagerMixin from 'mixins/EventManagerMixin';
-import FadeLoaderMixin from 'mixins/FadeLoaderMixin';
+//import FadeLoaderMixin from 'mixins/FadeLoaderMixin';
 
 import {
   WINDOW_RESIZE
@@ -15,7 +15,7 @@ import ProjectsRightSide from 'components/ProjectsRightSide';
 
 export default Vue.extend({
 
-  mixins: [ EventManagerMixin, FadeLoaderMixin ],
+  mixins: [ EventManagerMixin ],
 
   template: require( './template.html' ),
 

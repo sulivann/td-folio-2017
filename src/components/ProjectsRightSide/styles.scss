@@ -1,8 +1,14 @@
 @import '~stylesheets/common/variables';
 
 .projectsRightSide {
-  flex:1;
+  width:0%;
   background-color:$white-athens;
+
+  animation-name:slide-home-right;
+  animation-timing-function:ease-out;
+  animation-duration:1000ms;
+  animation-fill-mode:forwards;
+  animation-delay:500ms;
 }
 
 .projectsRightSide__wrapper {
@@ -17,4 +23,10 @@
   color:$gray-mine-shaft;
   margin-top:70px;
   display:block;
+  opacity:0;
+
+  animation-name:fade-in;
+  animation-duration:500ms;
+  animation-fill-mode:forwards;
+  animation-delay:1700ms;
 }
