@@ -4,6 +4,8 @@ import './styles.scss';
 
 import EventManagerMixin from 'mixins/EventManagerMixin';
 
+import ProjectsList from 'components/ProjectsList';
+
 export default Vue.extend({
 
   mixins: [ EventManagerMixin ],
@@ -27,5 +29,7 @@ export default Vue.extend({
 
   transitions: {},
 
-  components: {}
+  components: {
+    'projects-list': ProjectsList
+  }
 });
