@@ -14,6 +14,10 @@
 .projectsRightSide__wrapper {
   width:62%;
   margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  height:70%;
+  justify-content:space-between;
 }
 
 .projectsRightSide__selectedNumber {
