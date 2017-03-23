@@ -1,3 +1,5 @@
+@import '~stylesheets/common/variables';
+
 .projectsList {
   font-size:0.9375rem;
   opacity:0;
@@ -16,13 +18,18 @@
 
 .projectsList__name--selected {
   font-weight:600;
+  font-family:$font-primary;
 }
 
 .projectsList__name {
   color:rgba(34, 53, 97, 0.19);
+  font-family:$font-primary;
+  font-weight:400;
 }
 
 .projectsList__discover {
+  font-family:$font-primary;
+  font-weight:500;
   opacity:0;
 
   animation-name:fade-in;

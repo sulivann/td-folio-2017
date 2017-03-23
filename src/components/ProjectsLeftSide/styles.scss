@@ -23,7 +23,7 @@
 
 .projectsLeftSide__about {
   font-family:$font-primary;
-  font-weight:600;
+  font-weight:500;
   font-size:0.9375rem;
   color:$gray-mine-shaft;
   transition:opacity 300ms ease-out;
@@ -36,8 +36,12 @@
 .projectsLeftSide__cover {
   height:60%;
   width:100%;
+  min-height:33.5rem;
   position:relative;
   overflow:hidden;
+  background-image:url('/images/simon-la-salle.jpg');
+  background-size:cover;
+  background-position:center center;
 
   img {
     width:100%;

@@ -1,0 +1,26 @@
+font-face {
+   font-family:'Maison Neue';
+   src:url('/fonts/maisonneue-book-webfont.woff') format('woff2'),
+      url('/fonts/maisonneue-book-webfont.woff2') format('woff'); /* Modern Browsers */
+
+   font-style:normal;
+   font-weight:400;
+}
+
+font-face {
+   font-family:'Maison Neue';
+   src:url('/fonts/maisonneue-medium-webfont.woff') format('woff2'),
+      url('/fonts/maisonneue-medium-webfont.woff2') format('woff'); /* Modern Browsers */
+
+   font-style:normal;
+   font-weight:500;
+}
+
+font-face {
+   font-family:'Maison Neue';
+   src:url('/fonts/maisonneue-demi-webfont.woff') format('woff2'),
+      url('/fonts/maisonneue-demi-webfont.woff2') format('woff'); /* Modern Browsers */
+
+   font-style:normal;
+   font-weight:600;
+}
