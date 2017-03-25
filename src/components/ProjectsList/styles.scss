@@ -18,22 +18,20 @@
 
 .projectsList__name--selected {
   font-weight:600;
-  font-family:$font-primary;
+  cursor:pointer;
 }
 
 .projectsList__name {
-  color:rgba(34, 53, 97, 0.19);
-  font-family:$font-primary;
+  color:$blue-ocean;
   font-weight:400;
+  cursor:pointer;
+
+  &:hover {
+    font-weight:600;
+    color:$black-mine-shaft;
+  }
 }
 
 .projectsList__discover {
-  font-family:$font-primary;
   font-weight:500;
-  opacity:0;
-
-  animation-name:fade-in;
-  animation-duration:1200ms;
-  animation-fill-mode:forwards;
-  animation-delay:2800ms;
 }
