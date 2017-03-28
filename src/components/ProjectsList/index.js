@@ -23,7 +23,19 @@ export default Vue.extend({
 
   ready() {},
 
-  methods: {},
+  methods: {
+    triggerProject: function (e) {
+      /*eslint-disable*/
+      const el = document.getElementsByClassName('projectsList__name--selected');
+
+      el[0].classList.add('projectsList__name');
+      el[0].classList.remove('projectsList__name--selected');
+
+      e.target.classList.add('projectsList__name--selected');
+      e.target.classList.remove('projectsList__name');
+      /*eslint-enable*/
+    }
+  },
 
   transitions: {},
 
