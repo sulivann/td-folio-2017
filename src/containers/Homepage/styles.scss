@@ -6,3 +6,11 @@
   height:100vh;
   overflow:hidden;
 }
+
+.homepage {
+  cursor:url('/images/scroll-cursor.png'), auto;
+}
+
+.homepage--scrolled {
+  cursor:auto;
+}

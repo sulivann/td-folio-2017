@@ -24,10 +24,24 @@ export default Vue.extend({
     method: 'onWindowResize'
   }],
 
+  domEvents: [
+    {
+      target: window,
+      event: 'mousewheel',
+      method: 'hideScrollCursor'
+    },
+    {
+      target: window,
+      event: 'DOMMouseScroll',
+      method: 'hideScrollCursor'
+    }
+  ],
+
   data() {
 
     return {
-      _hidden: null
+      _hidden: null,
+      scrolled: false
     };
   },
 
@@ -40,6 +54,14 @@ export default Vue.extend({
     onWindowResize( {width, height} ) {
       /*eslint-disable */
       console.log( `Window resize from application with debounce -> width: ${width}px || height: ${ height }` );
+      /*eslint-enable */
+    },
+
+    hideScrollCursor() {
+      /*eslint-disable */
+      if (!this.scrolled) {
+        this.scrolled = true;
+      }
       /*eslint-enable */
     }
 
