@@ -33,5 +33,10 @@
 }
 
 .projectsList__discover {
+  display:none;
+}
+
+.projectsList__discover--active {
+  display:block;
   font-weight:500;
 }

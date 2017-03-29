@@ -25,13 +25,20 @@ export default Vue.extend({
 
   methods: {
     triggerProject: function (e) {
-      const el = document.getElementsByClassName('projectsList__name--selected');
 
-      el[0].classList.add('projectsList__name');
-      el[0].classList.remove('projectsList__name--selected');
+      const selectedEl = document.getElementsByClassName('projectsList__name--selected')[0];
+      const activeDiscover = selectedEl.nextElementSibling;
 
+      selectedEl.classList.add('projectsList__name');
+      selectedEl.classList.remove('projectsList__name--selected');
       e.target.classList.add('projectsList__name--selected');
       e.target.classList.remove('projectsList__name');
+
+      activeDiscover.classList.add('projectsList__discover');
+      activeDiscover.classList.remove('projectsList__discover--active');
+      e.target.nextElementSibling.classList.add('projectsList__discover--active');
+      e.target.nextElementSibling.classList.remove('projectsList__discover');
+
     }
   },
 
