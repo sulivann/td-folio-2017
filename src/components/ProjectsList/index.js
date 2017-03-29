@@ -25,7 +25,6 @@ export default Vue.extend({
 
   methods: {
     triggerProject: function (e) {
-      /*eslint-disable*/
       const el = document.getElementsByClassName('projectsList__name--selected');
 
       el[0].classList.add('projectsList__name');
@@ -33,7 +32,6 @@ export default Vue.extend({
 
       e.target.classList.add('projectsList__name--selected');
       e.target.classList.remove('projectsList__name');
-      /*eslint-enable*/
     }
   },
 
