@@ -58,11 +58,9 @@ export default Vue.extend({
     },
 
     hideScrollCursor() {
-      /*eslint-disable */
       if (!this.scrolled) {
         this.scrolled = true;
       }
-      /*eslint-enable */
     }
 
   },

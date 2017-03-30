@@ -4,6 +4,8 @@ import './styles.scss';
 
 import EventManagerMixin from 'mixins/EventManagerMixin';
 
+import ProjectsData from 'config/projectsData';
+
 export default Vue.extend({
 
   mixins: [ EventManagerMixin ],
@@ -17,11 +19,13 @@ export default Vue.extend({
   data() {
 
     return {
+      projectsData: ProjectsData,
       _hidden: null
     };
   },
 
-  ready() {},
+  ready() {
+  },
 
   methods: {
     triggerProject: function (e) {
