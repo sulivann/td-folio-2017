@@ -1,8 +1,8 @@
 <ul class="projectsList">
-  <li v-for="project in projectsData">
+  <li v-for="(index, project) in projectsData">
     <div class="projectsList__name--selected" v-on:click="triggerProject">
       {{project.name}}
     </div>
-    <div class="projectsList__discover--active"></div>
+    <div class="projectsList__discover--active">discover</div>
   </li>
 </ul>

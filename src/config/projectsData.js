@@ -1,17 +1,13 @@
-export default [
+const projectsData = [
   {
-    name: "Boucheron"
+    name: 'ello'
   },
   {
-    name: "Anaïs Profit"
+    name: 'ello'
   },
   {
-    name: "Airfrance"
-  },
-  {
-    name: "Repoleak"
-  },
-  {
-    name: "Moodie"
+    name: 'ello'
   }
 ];
+
+module.exports = projectsData;
