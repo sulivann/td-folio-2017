@@ -33,6 +33,10 @@ export default Vue.extend({
       const selectedEl = document.getElementsByClassName('projectsList__name--selected')[0];
       const activeDiscover = selectedEl.nextElementSibling;
 
+      /*eslint-disable*/
+      console.log(this.scrolled);
+      /*eslint-enable*/
+
       selectedEl.classList.add('projectsList__name');
       selectedEl.classList.remove('projectsList__name--selected');
 

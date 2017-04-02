@@ -19,6 +19,7 @@ export default Vue.extend({
   data() {
 
     return {
+      projectNumber: 1,
       _hidden: null
     };
   },
