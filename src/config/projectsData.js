@@ -1,12 +1,23 @@
 const projectsData = [
   {
-    name: 'ello'
+    name: 'Boucheron',
+    selected: true
   },
   {
-    name: 'ello'
+    name: 'Anaïs Profit',
+    selected: false
   },
   {
-    name: 'ello'
+    name: 'Airfrance',
+    selected: false
+  },
+  {
+    name: 'Repoleak - soon',
+    selected: false
+  },
+  {
+    name: 'Moodie',
+    selected: false
   }
 ];
 
