@@ -1,7 +1,7 @@
 'use strict';
 
 import Vuex from 'vuex';
-import exampleStore from 'vuex/example/store';
+import projectNumberStore from 'vuex/projectNumber/store';
 import createLogger from 'vuex/logger';
 
 Vue.use(Vuex);
@@ -10,7 +10,7 @@ const debug = process.env.NODE_ENV !== 'production';
 
 export default new Vuex.Store({
   modules: {
-    exampleStore
+    projectNumberStore
   },
   strict: debug,
   middlewares: debug ? [createLogger()] : []

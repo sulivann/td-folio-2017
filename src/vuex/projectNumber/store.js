@@ -1,16 +1,16 @@
 'use strict';
 
 import {
-  COUNTER_INCREMENT
+  CHANGE_PROJECT
 } from '../mutation-types';
 
 const state = {
-  count: 0
+  projectNumber: 1
 };
 
 const mutations = {
-  [ COUNTER_INCREMENT ] (state) {
-    state.count++;
+  [ CHANGE_PROJECT ] (state, {number}) {
+    state.projectNumber = number;
   }
 };
 

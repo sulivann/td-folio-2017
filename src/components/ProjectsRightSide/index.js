@@ -4,6 +4,14 @@ import './styles.scss';
 
 import EventManagerMixin from 'mixins/EventManagerMixin';
 
+import {
+  changeProject
+} from 'vuex/projectNumber/actions';
+
+import {
+  projectNumber
+} from 'vuex/projectNumber/getters';
+
 import ProjectsList from 'components/ProjectsList';
 
 export default Vue.extend({
@@ -12,6 +20,15 @@ export default Vue.extend({
 
   template: require( './template.html' ),
 
+  vuex: {
+    getters: {
+      projectNumber: projectNumber
+    },
+    actions: {
+      changeProject
+    }
+  },
+
   emitterEvents: [],
 
   domEvents: [],
@@ -19,7 +36,6 @@ export default Vue.extend({
   data() {
 
     return {
-      projectNumber: 1,
       _hidden: null
     };
   },

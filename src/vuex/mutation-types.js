@@ -1,5 +1,5 @@
 const mutationTypes = {
-  COUNTER_INCREMENT: 'COUNTER_INCREMENT'
+  CHANGE_PROJECT: 'CHANGE_PROJECT'
 };
 
 module.exports = mutationTypes;
