@@ -1,23 +1,28 @@
 const projectsData = [
   {
     name: 'Boucheron',
-    selected: true
+    selected: true,
+    imageCover: 'VISUS_BOUCHERON.jpg'
   },
   {
     name: 'Anaïs Profit',
-    selected: false
+    selected: false,
+    imageCover: 'VISUS_ANAIS.jpg'
   },
   {
     name: 'Airfrance',
-    selected: false
+    selected: false,
+    imageCover: 'VISUS_BOUCHERON.jpg'
   },
   {
     name: 'Repoleak - soon',
-    selected: false
+    selected: false,
+    imageCover: 'VISUS_REPOLEAK.jpg'
   },
   {
     name: 'Moodie',
-    selected: false
+    selected: false,
+    imageCover: 'VISUS_MOODIE.jpg'
   }
 ];
 

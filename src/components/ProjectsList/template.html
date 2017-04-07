@@ -1,14 +1,14 @@
 <ul class="projectsList">
   <li v-for="(index, project) in projectsData">
-    <div class="projectsList__container" v-if='project.selected'>
-      <div class="projectsList__name--selected" v-on:click="triggerProject">
+    <div class="projectsList__container" v-if='index == (projectNumber - 1)'>
+      <div class="projectsList__name--selected">
         {{project.name}}
       </div>
       <div class="projectsList__discover--active">discover</div>
     </div>
 
     <div class="projectsList__container" v-else>
-      <div class="projectsList__name" v-on:click="triggerProject">
+      <div class="projectsList__name" v-on:click="changeProject">
         {{project.name}}
       </div>
       <div class="projectsList__discover">discover</div>

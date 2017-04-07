@@ -9,8 +9,8 @@ const state = {
 };
 
 const mutations = {
-  [ CHANGE_PROJECT ] (state, {number}) {
-    state.projectNumber = number;
+  [ CHANGE_PROJECT ] (state) {
+    state.projectNumber++;
   }
 };
 
