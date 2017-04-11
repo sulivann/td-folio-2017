@@ -12,7 +12,7 @@ const projectsData = [
   {
     name: 'Airfrance',
     selected: false,
-    imageCover: 'VISUS_BOUCHERON.jpg'
+    imageCover: 'VISUS_AIRFRANCE.jpg'
   },
   {
     name: 'Repoleak - soon',

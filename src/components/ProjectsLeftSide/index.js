@@ -35,15 +35,22 @@ export default Vue.extend({
 
   data() {
 
-    const projectCover = projectsData[this.projectNumber-1].imageCover;
-
     return {
       aboutUrl: '#',
       projectCover: {
-        backgroundImage: `url('/images/${projectCover}')`
+
       },
       _hidden: null
     };
+  },
+
+  computed: {
+    projectCover: function () {
+
+      return {
+        backgroundImage: `url('/images/${projectsData[this.projectNumber-1].imageCover}')`
+      }
+    }
   },
 
   ready() {},
