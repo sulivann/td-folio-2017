@@ -49,7 +49,7 @@ export default Vue.extend({
 
       return {
         backgroundImage: `url('/images/${projectsData[this.projectNumber-1].imageCover}')`
-      }
+      };
     }
   },
 
