@@ -44,7 +44,13 @@ export default Vue.extend({
   ready() {
   },
 
-  methods: {},
+  methods: {
+    onChangeProject: function (index) {
+
+      this.changeProject(index);
+
+    }
+  },
 
   transitions: {},
 
