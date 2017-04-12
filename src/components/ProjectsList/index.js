@@ -49,6 +49,12 @@ export default Vue.extend({
 
       this.changeProject(index);
 
+      const projectCover = document.querySelector('.projectsLeftSide__mask');
+
+      projectCover.classList.remove('projectsLeftSide__mask');
+      void projectCover.offsetWidth;
+      projectCover.classList.add('projectsLeftSide__mask');
+
     }
   },
 

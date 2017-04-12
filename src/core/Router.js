@@ -2,6 +2,8 @@ import VueRouter from 'vue-router';
 
 import HomePageComponent from 'containers/Homepage';
 
+import AboutPageComponent from 'containers/About';
+
 Vue.use( VueRouter );
 
 class Router extends VueRouter {
@@ -27,6 +29,11 @@ class Router extends VueRouter {
       '/': {
         name: "home",
         component: HomePageComponent
+      },
+
+      '/about': {
+        name: "about",
+        component: AboutPageComponent
       }
 
     });

@@ -1,8 +1,13 @@
 <div class="projectsLeftSide">
-  <div class="projectLeftSide__wrapper">
-    <a class="projectsLeftSide__about" v-bind:href="aboutUrl">About</a>
-  </div>
+
+  <nav class="projectLeftSide__nav">
+    <ul class="projectLeftSide__wrapper">
+      <li><a class="projectsLeftSide__about" v-link='{name: "about"}'>About</a></li>
+    </ul>
+  </nav>
+
   <div class="projectsLeftSide__cover" v-bind:style="projectCover">
     <div class="projectsLeftSide__mask"></div>
   </div>
+
 </div>

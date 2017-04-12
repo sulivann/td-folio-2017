@@ -36,7 +36,6 @@ export default Vue.extend({
   data() {
 
     return {
-      aboutUrl: '#',
       projectCover: {
 
       },
