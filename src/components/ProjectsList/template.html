@@ -1,7 +1,7 @@
 <ul class="projectsList">
 
   <li v-for="(index, project) in projectsData">
-    <div class="projectsList__container" v-if='index == (projectNumber - 1)'>
+    <div class="projectsList__container" v-if='index == (projectNumber - 1)' v-link="{ name: 'project', params: { projectName: project.slug }}">
       <div class="projectsList__name--selected">
         {{project.name}}
       </div>

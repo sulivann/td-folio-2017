@@ -4,6 +4,8 @@ import HomePageComponent from 'containers/Homepage';
 
 import AboutPageComponent from 'containers/About';
 
+import ProjectPageComponent from 'containers/Project';
+
 Vue.use( VueRouter );
 
 class Router extends VueRouter {
@@ -34,6 +36,11 @@ class Router extends VueRouter {
       '/about': {
         name: "about",
         component: AboutPageComponent
+      },
+
+      '/project/:projectName': {
+        name: "project",
+        component: ProjectPageComponent
       }
 
     });
