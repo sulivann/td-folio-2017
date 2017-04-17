@@ -36,9 +36,6 @@ export default Vue.extend({
   data() {
 
     return {
-      projectCover: {
-
-      },
       _hidden: null
     };
   },
@@ -49,6 +46,10 @@ export default Vue.extend({
       return {
         backgroundImage: `url('/images/${projectsData[this.projectNumber-1].imageCover}')`
       };
+    },
+
+    projectSlug: function () {
+      return projectsData[this.projectNumber-1].slug;
     }
   },
 
