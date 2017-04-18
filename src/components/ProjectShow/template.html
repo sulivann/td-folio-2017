@@ -1,0 +1,13 @@
+<div class="projectShow">
+
+  <div class="projectShow__element" v-for="(index, element) in projectData.show">
+
+    <img class="projectShow__image" v-bind:src="'/images/'+element.image">
+
+    <h3 class="projectShow__label" v-if="element.label">
+      {{element.label}}
+    </h3>
+
+  </div>
+
+</div>

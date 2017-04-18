@@ -11,6 +11,8 @@ import {
 
 import ProjectHeader from 'components/ProjectHeader';
 
+import ProjectShow from 'components/ProjectShow';
+
 export default Vue.extend({
 
   mixins: [ EventManagerMixin, FadeTransitionMixin ],
@@ -57,6 +59,7 @@ export default Vue.extend({
   },
 
   components: {
-    'project-header': ProjectHeader
+    'project-header': ProjectHeader,
+    'project-show': ProjectShow
   }
 });

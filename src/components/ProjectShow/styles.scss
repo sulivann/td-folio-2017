@@ -1,0 +1,20 @@
+@import '~stylesheets/common/variables';
+
+.projectShow {
+  width:85.8%;
+  margin:0 auto;
+  margin-top:170px;
+}
+
+.projectShow__element:not(:last-child) {
+  margin-bottom:70px;
+}
+
+.projectShow__image {
+  width:100%;
+}
+
+.projectShow__label {
+  font-size:1.406rem;
+  margin-top:30px;
+}

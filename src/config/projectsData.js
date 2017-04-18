@@ -9,7 +9,13 @@ const projectsData = [
     selected: true,
     released: true,
     imageCover: 'VISUS_BOUCHERON.jpg',
-    desc:'The House of Boucheron is a French family dynasty founded by Frederic Boucheron in 1858. Boucheron makes watches, jewellery, and licenses its marque for perfumes. We were asked to rethink Boucheron digital presence by bringing clarity, luxury and an high-end approach to the current website.'
+    desc:'The House of Boucheron is a French family dynasty founded by Frederic Boucheron in 1858. Boucheron makes watches, jewellery, and licenses its marque for perfumes. We were asked to rethink Boucheron digital presence by bringing clarity, luxury and an high-end approach to the current website.',
+    show: [
+      {
+        image: 'BOUCHERON_1.jpg',
+        label: 'yo'
+      }
+    ]
   },
   {
     id: '2',
