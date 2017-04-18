@@ -9,6 +9,8 @@ import {
   WINDOW_RESIZE
 } from 'config/messages';
 
+import ProjectHeader from 'components/ProjectHeader';
+
 export default Vue.extend({
 
   mixins: [ EventManagerMixin, FadeTransitionMixin ],
@@ -55,5 +57,6 @@ export default Vue.extend({
   },
 
   components: {
+    'project-header': ProjectHeader
   }
 });
