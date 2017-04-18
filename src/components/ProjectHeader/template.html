@@ -12,22 +12,22 @@
     <div class="projectHeader__presentation">
       <div class="projectHeader__title">
         <div class="projectHeader__titleContainer">
-          <p>boucheron</p>
-          <p>redesign</p>
+          <p>{{projectData.name}}</p>
+          <p>{{projectData.type}}</p>
         </div>
       </div>
 
       <div class="projectHeader__description">
         <ul class="projectHeader__details">
-          <li>01 - school project</li>
+          <li>0{{projectData.id}} - {{projectData.env}}</li>
           <li>role - designer</li>
-          <li>2016</li>
+          <li>{{projectData.date}}</li>
         </ul>
 
         <div class="projectHeader__separator"></div>
 
         <p class="projectHeader__excerpt">
-          The House of Boucheron is a French family dynasty founded by Frederic Boucheron in 1858. Boucheron makes watches, jewellery, and licenses its marque for perfumes. We were asked to rethink Boucheron digital presence by bringing clarity, luxury and an high-end approach to the current website.
+          {{projectData.desc}}
         </p>
       </div>
 
