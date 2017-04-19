@@ -4,6 +4,7 @@
   width:85.8%;
   margin:0 auto;
   margin-top:170px;
+  padding-bottom:215px;
 }
 
 .projectShow__element:not(:last-child) {
@@ -14,7 +15,36 @@
   width:100%;
 }
 
+.projectShow__image--centered {
+  width:61%;
+  margin:0 auto;
+  display:block;
+  min-width:860px;
+}
+
 .projectShow__label {
   font-size:1.406rem;
   margin-top:30px;
+
+  p:first-child {
+    margin-bottom:13px;
+  }
+}
+
+.projectShow__label--centered {
+  font-size:1.406rem;
+  margin:0 auto;
+  margin-top:30px;
+  width:61%;
+  text-align:center;
+  display:block;
+  min-width:860px;
+
+  p:first-child {
+    margin-bottom:13px;
+  }
+}
+
+.projectShow__italic {
+  font-style:italic;
 }

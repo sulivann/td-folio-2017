@@ -2,11 +2,20 @@
 
   <div class="projectShow__element" v-for="(index, element) in projectData.show">
 
-    <img class="projectShow__image" v-bind:src="'/images/'+element.image">
+    <img class="projectShow__image--centered" v-bind:src="'/images/'+element.image" v-if="element.type == 'centered'">
+    <img class="projectShow__image" v-bind:src="'/images/'+element.image" v-else>
 
-    <h3 class="projectShow__label" v-if="element.label">
+    <div class="projectShow__label" v-if="element.type == 'double-paragraph'">
+      <p>{{element.firstLabel}}</p>
+      <p class="projectShow__italic">{{element.secondLabel}}</p>
+    </div>
+    <div class="projectShow__label--centered" v-if="element.type == 'centered'">
+      <p class="projectShow__italic">{{element.firstLabel}}</p>
+      <p class="projectShow__italic">{{element.secondLabel}}</p>
+    </div>
+    <div class="projectShow__label" v-else>
       {{element.label}}
-    </h3>
+    </div>
 
   </div>
 

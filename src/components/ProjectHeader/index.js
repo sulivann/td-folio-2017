@@ -12,9 +12,9 @@ import {
   projectNumber
 } from 'vuex/projectNumber/getters';
 
-import projectsData from 'config/projectsData';
-
 export default Vue.extend({
+
+  props: ['projectData'],
 
   mixins: [ EventManagerMixin ],
 
@@ -36,7 +36,6 @@ export default Vue.extend({
   data() {
 
     return {
-      projectData: projectsData[this.projectNumber-1],
       _hidden: null
     };
   },

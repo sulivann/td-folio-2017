@@ -9,6 +9,8 @@ import {
   WINDOW_RESIZE
 } from 'config/messages';
 
+import projectsData from 'config/projectsData';
+
 import ProjectHeader from 'components/ProjectHeader';
 
 import ProjectShow from 'components/ProjectShow';
@@ -38,15 +40,20 @@ export default Vue.extend({
   ],
 
   data() {
+    for (const data of projectsData) {
+      if (data.slug == this.$route.params.projectName) {
+        this.projectData = data;
+        break;
+      }
+    }
 
     return {
+      projectData: this.projectData,
       _hidden: null
     };
   },
 
-  created() {
-
-  },
+  created() {},
 
   methods: {
 

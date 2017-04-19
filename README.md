@@ -9,3 +9,4 @@
 - [X] Organize as template for projectsList (one element)
 - [X] Organize with data for projectsList
 - [ ] Remove unreleased project
+- [ ] Mutation when refresh on a case
