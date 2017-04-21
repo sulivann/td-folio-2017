@@ -87,8 +87,21 @@ export default Vue.extend({
         if (!this.scrolled) {
           this.scrolled = true;
         }
-        this.changeProject(this.projectNumber+1);
+
+        this.toggleChangeProject();
+
       }
+    },
+
+    toggleChangeProject() {
+
+      this.changeProject(this.projectNumber+1);
+      const projectCover = document.querySelector('.projectsLeftSide__mask');
+
+      projectCover.classList.remove('projectsLeftSide__mask');
+      void projectCover.offsetWidth;
+      projectCover.classList.add('projectsLeftSide__mask');
+
     }
 
   },
