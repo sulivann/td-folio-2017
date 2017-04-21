@@ -13,9 +13,9 @@ class Router extends VueRouter {
   constructor() {
 
     super({
-      hashbang: false,
+      hashbang: true,
       pushState: true,
-      history: true,
+      history: false,
       abstract: false,
       saveScrollPosition: false,
       transitionOnLoad: false

@@ -44,7 +44,7 @@ export default Vue.extend({
     projectCover: function () {
 
       return {
-        backgroundImage: `url('/images/${projectsData[this.projectNumber-1].imageCover}')`
+        backgroundImage: `url('./images/${projectsData[this.projectNumber-1].imageCover}')`
       };
     },
 

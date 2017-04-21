@@ -2,12 +2,22 @@
 
 import './styles.scss';
 
+import throttle from 'lodash.throttle';
+
 import EventManagerMixin from 'mixins/EventManagerMixin';
 import FadeTransitionMixin from 'mixins/FadeTransitionMixin';
 
 import {
   WINDOW_RESIZE
 } from 'config/messages';
+
+import {
+  changeProject
+} from 'vuex/projectNumber/actions';
+
+import {
+  projectNumber
+} from 'vuex/projectNumber/getters';
 
 import LogoLoader from 'components/LogoLoader';
 import ProjectsLeftSide from 'components/ProjectsLeftSide';
@@ -19,6 +29,15 @@ export default Vue.extend({
 
   template: require( './template.html' ),
 
+  vuex: {
+    getters: {
+      projectNumber: projectNumber
+    },
+    actions: {
+      changeProject
+    }
+  },
+
   emitterEvents: [{
     message: WINDOW_RESIZE,
     method: 'onWindowResize'
@@ -27,13 +46,13 @@ export default Vue.extend({
   domEvents: [
     {
       target: window,
-      event: 'mousewheel',
-      method: 'hideScrollCursor'
+      event: 'wheel',
+      method: 'handleScrollDown'
     },
     {
       target: window,
       event: 'DOMMouseScroll',
-      method: 'hideScrollCursor'
+      method: 'handleScrollDown'
     }
   ],
 
@@ -51,15 +70,24 @@ export default Vue.extend({
 
   methods: {
 
+    bind() {
+      this.handleScrollDown = throttle(this.broadcastScrollDown, 1400, { trailing: false, leading: true });
+    },
+
     onWindowResize( {width, height} ) {
       /*eslint-disable */
       console.log( `Window resize from application with debounce -> width: ${width}px || height: ${ height }` );
       /*eslint-enable */
     },
 
-    hideScrollCursor() {
-      if (!this.scrolled) {
-        this.scrolled = true;
+    broadcastScrollDown(e) {
+      const wDelta = e.wheelDelta < 0 ? 'down' : 'up';
+
+      if (wDelta == 'down') {
+        if (!this.scrolled) {
+          this.scrolled = true;
+        }
+        this.changeProject(this.projectNumber+1);
       }
     }
 
