@@ -10,3 +10,4 @@
 - [X] Organize with data for projectsList
 - [ ] Remove unreleased project
 - [ ] Mutation when refresh on a case
+- [ ] Remove useless block in "Selected Projects"

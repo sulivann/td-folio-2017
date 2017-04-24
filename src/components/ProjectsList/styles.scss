@@ -19,6 +19,8 @@
 .projectsList__name--selected {
   font-weight:600;
   cursor:pointer;
+  height:15px;
+  overflow:hidden;
 }
 
 .projectsList__name {

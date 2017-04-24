@@ -26,6 +26,13 @@
   color:$gray-mine-shaft;
   margin-top:70px;
   display:block;
+  opacity:0;
+
+  animation-name:fade-in;
+  animation-timing-function:ease-out;
+  animation-duration:500ms;
+  animation-fill-mode:forwards;
+  animation-delay:900ms;
 }
 
 .projectsRightSide__container {
@@ -40,27 +47,49 @@
 }
 
 .projectsRightSide__label {
-  p {
+
+  .projectsRightSide__line {
     font-size:2.063rem;
     font-weight:500;
     margin-bottom:0.625rem;
     color:$black-mine-shaft;
+    height:33px;
   }
 
-  p:nth-child(1) {
-    display:inline-block;
-    position:relative;
+  // .projectsRightSide__line:nth-child(1) {
+  //   display:inline-block;
+  //   position:relative;
+  //
+  //   &:after {
+  //     content:'';
+  //     background-color:$black-mine-shaft;
+  //     width:0px;
+  //     height:2px;
+  //     display:block;
+  //     position:absolute;
+  //     top:50%;
+  //     right:-20px;
+  //     transform:translate(100%, -50%);
+  //
+  //     animation-name:draw-line-project;
+  //     animation-timing-function:ease-out;
+  //     animation-duration:300ms;
+  //     animation-fill-mode:forwards;
+  //     animation-delay:900ms;
+  //   }
+  // }
 
-    &:after {
-      content:'';
-      background-color:$black-mine-shaft;
-      width:30px;
-      height:2px;
-      display:block;
-      position:absolute;
-      top:50%;
-      right:-20px;
-      transform:translate(100%, -50%);
+  .projectsRightSide__mask {
+    height:100%;
+    overflow:hidden;
+
+    .projectsRightSide__typo {
+        transform:translate(0%, 100%);
+
+        animation-name:typo-slide-up;
+        animation-duration:650ms;
+        animation-fill-mode:forwards;
+        animation-delay:600ms;
     }
   }
 }

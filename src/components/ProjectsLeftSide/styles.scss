@@ -19,9 +19,10 @@
   opacity:0;
 
   animation-name:fade-in;
+  animation-timing-function:ease-out;
   animation-duration:500ms;
   animation-fill-mode:forwards;
-  animation-delay:1200ms;
+  animation-delay:900ms;
 }
 
 .projectsLeftSide__about {
@@ -46,7 +47,7 @@
   cursor:pointer;
 
   animation-name:slide-cover-3d;
-  animation-duration:1200ms;
+  animation-duration:1130ms;
   animation-fill-mode:forwards;
   animation-timing-function:ease-out;
 }
@@ -60,7 +61,7 @@
   background-color:$color-white;
 
   animation-name:slide-out-home;
-  animation-duration:1000ms;
+  animation-duration:1130ms;
   animation-fill-mode:forwards;
   animation-timing-function:cubic-bezier(0.4, 0.12, 0.45, 0.72);
 }
