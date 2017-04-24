@@ -21,6 +21,31 @@
   cursor:pointer;
   height:15px;
   overflow:hidden;
+  display:inline-block;
+  position:relative;
+  padding-left:0px;
+  animation-name:padding-test;
+  animation-timing-function:ease-out;
+  animation-duration:500ms;
+  animation-fill-mode:forwards;
+  animation-delay:900ms;
+
+  &:after {
+    content:'';
+    background-color:$black-mine-shaft;
+    width:0px;
+    height:2px;
+    display:block;
+    position:absolute;
+    top:50%;
+    left:0;
+
+    animation-name:draw-line-project;
+    animation-timing-function:ease-out;
+    animation-duration:500ms;
+    animation-fill-mode:forwards;
+    animation-delay:900ms;
+  }
 }
 
 .projectsList__name {
