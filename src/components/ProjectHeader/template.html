@@ -18,17 +18,19 @@
       </div>
 
       <div class="projectHeader__description">
-        <ul class="projectHeader__details">
-          <li>0{{projectData.id}} - {{projectData.env}}</li>
-          <li>role - designer</li>
-          <li>{{projectData.date}}</li>
-        </ul>
+        <div class="projectHeader__descriptionContainer">
+          <ul class="projectHeader__details">
+            <li>0{{projectData.id}} - {{projectData.env}}</li>
+            <li>role - designer</li>
+            <li>{{projectData.date}}</li>
+          </ul>
 
-        <div class="projectHeader__separator"></div>
+          <div class="projectHeader__separator"></div>
 
-        <p class="projectHeader__excerpt">
-          {{projectData.desc}}
-        </p>
+          <p class="projectHeader__excerpt">
+            {{projectData.desc}}
+          </p>
+        </div>
       </div>
 
     </div>

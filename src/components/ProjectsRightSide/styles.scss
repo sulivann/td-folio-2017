@@ -1,14 +1,14 @@
 @import '~stylesheets/common/variables';
 
 .projectsRightSide {
-  width:0%;
+  width:37%;
   background-color:$white-athens;
 
-  animation-name:slide-home-right;
-  animation-timing-function:ease-out;
-  animation-duration:1000ms;
-  animation-fill-mode:forwards;
-  animation-delay:500ms;
+  // animation-name:slide-home-right;
+  // animation-timing-function:ease-out;
+  // animation-duration:1000ms;
+  // animation-fill-mode:forwards;
+  // animation-delay:500ms;
 }
 
 .projectsRightSide__wrapper {
@@ -26,21 +26,9 @@
   color:$gray-mine-shaft;
   margin-top:70px;
   display:block;
-  opacity:0;
-
-  animation-name:fade-in;
-  animation-duration:500ms;
-  animation-fill-mode:forwards;
-  animation-delay:1700ms;
 }
 
 .projectsRightSide__container {
-  opacity:0;
-
-  animation-name:fade-in;
-  animation-duration:1200ms;
-  animation-fill-mode:forwards;
-  animation-delay:2800ms;
 }
 
 .projectsRightSide__separator {

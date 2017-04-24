@@ -34,7 +34,6 @@
 
 .projectHeader__title {
   font-size:3.125rem;
-  padding-right:106px;
   flex:1;
   display:flex;
   justify-content:flex-end;
@@ -62,11 +61,16 @@
 
 .projectHeader__titleContainer {
   display:inline-block;
+  padding-right:106px;
 }
 
 .projectHeader__description {
   flex:1;
   margin:220px 0 0 5px;
+}
+
+.projectHeader__descriptionContainer {
+  max-width:450px;
 }
 
 .projectHeader__details {
