@@ -39,16 +39,15 @@
   height:60%;
   width:100%;
   min-height:33.5rem;
-  position:relative;
   overflow:hidden;
+  position:relative;
   background-size:cover;
   background-position:center center;
   cursor:pointer;
 
-  img {
-    width:100%;
-    min-height:100%;
-  }
+  animation-name:slide-cover-3d;
+  animation-duration:1200ms;
+  animation-fill-mode:forwards;
 }
 
 .projectsLeftSide__mask {

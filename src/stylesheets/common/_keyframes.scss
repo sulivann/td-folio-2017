@@ -22,6 +22,15 @@
   }
 }
 
+@keyframes slide-cover-3d {
+  from {
+    transform:translate3d(-40px, 0, 0);
+  }
+  to {
+    transform:translate3d(0,0,0);
+  }
+}
+
 @keyframes slide-out-home {
   to {
     transform:translateX(100%);

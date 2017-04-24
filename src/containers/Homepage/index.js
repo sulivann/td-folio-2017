@@ -5,7 +5,7 @@ import './styles.scss';
 import throttle from 'lodash.throttle';
 
 import EventManagerMixin from 'mixins/EventManagerMixin';
-import FadeTransitionMixin from 'mixins/FadeTransitionMixin';
+//import FadeTransitionMixin from 'mixins/FadeTransitionMixin';
 
 import {
   WINDOW_RESIZE
@@ -27,7 +27,7 @@ import ProjectsRightSide from 'components/ProjectsRightSide';
 
 export default Vue.extend({
 
-  mixins: [ EventManagerMixin, FadeTransitionMixin ],
+  mixins: [ EventManagerMixin ],
 
   template: require( './template.html' ),
 
@@ -106,11 +106,16 @@ export default Vue.extend({
         this.changeProject(this.projectNumber+1);
       }
 
+      const projectCoverContainer = document.querySelector('.projectsLeftSide__cover');
       const projectCover = document.querySelector('.projectsLeftSide__mask');
 
       projectCover.classList.remove('projectsLeftSide__mask');
       void projectCover.offsetWidth;
       projectCover.classList.add('projectsLeftSide__mask');
+
+      projectCoverContainer.classList.remove('projectsLeftSide__cover');
+      void projectCover.offsetWidth;
+      projectCoverContainer.classList.add('projectsLeftSide__cover');
 
     },
 
@@ -123,11 +128,16 @@ export default Vue.extend({
         this.changeProject(this.projectNumber-1);
       }
 
+      const projectCoverContainer = document.querySelector('.projectsLeftSide__cover');
       const projectCover = document.querySelector('.projectsLeftSide__mask');
 
       projectCover.classList.remove('projectsLeftSide__mask');
       void projectCover.offsetWidth;
       projectCover.classList.add('projectsLeftSide__mask');
+
+      projectCoverContainer.classList.remove('projectsLeftSide__cover');
+      void projectCover.offsetWidth;
+      projectCoverContainer.classList.add('projectsLeftSide__cover');
 
     }
 
