@@ -19,6 +19,8 @@ import {
   projectNumber
 } from 'vuex/projectNumber/getters';
 
+import projectsData from 'config/projectsData';
+
 import LogoLoader from 'components/LogoLoader';
 import ProjectsLeftSide from 'components/ProjectsLeftSide';
 import ProjectsRightSide from 'components/ProjectsRightSide';
@@ -59,8 +61,7 @@ export default Vue.extend({
   data() {
 
     return {
-      _hidden: null,
-      scrolled: false
+      _hidden: null
     };
   },
 
@@ -84,18 +85,44 @@ export default Vue.extend({
       const wDelta = e.wheelDelta < 0 ? 'down' : 'up';
 
       if (wDelta == 'down') {
-        if (!this.scrolled) {
-          this.scrolled = true;
-        }
 
-        this.toggleChangeProject();
+        this.toggleChangeProjectUp();
 
       }
+      else if (wDelta == 'up') {
+
+        this.toggleChangeProjectDown();
+
+      }
+
     },
 
-    toggleChangeProject() {
+    toggleChangeProjectUp() {
 
-      this.changeProject(this.projectNumber+1);
+      if (this.projectNumber >= projectsData.length) {
+        this.changeProject(1);
+      }
+      else {
+        this.changeProject(this.projectNumber+1);
+      }
+
+      const projectCover = document.querySelector('.projectsLeftSide__mask');
+
+      projectCover.classList.remove('projectsLeftSide__mask');
+      void projectCover.offsetWidth;
+      projectCover.classList.add('projectsLeftSide__mask');
+
+    },
+
+    toggleChangeProjectDown() {
+
+      if (this.projectNumber <= 1) {
+        this.changeProject(projectsData.length);
+      }
+      else {
+        this.changeProject(this.projectNumber-1);
+      }
+
       const projectCover = document.querySelector('.projectsLeftSide__mask');
 
       projectCover.classList.remove('projectsLeftSide__mask');
