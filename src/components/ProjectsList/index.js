@@ -47,18 +47,26 @@ export default Vue.extend({
   methods: {
     onChangeProject: function (index) {
 
-      this.changeProject(index);
+      const projectName = document.querySelector('.projectsList__name--selected');
 
-      const projectCoverContainer = document.querySelector('.projectsLeftSide__cover');
-      const projectCover = document.querySelector('.projectsLeftSide__mask');
+      projectName.classList.remove('projectsList__name--selected');
+      projectName.classList.add('projectsList__name--hidden');
 
-      projectCover.classList.remove('projectsLeftSide__mask');
-      void projectCover.offsetWidth;
-      projectCover.classList.add('projectsLeftSide__mask');
+      setTimeout( () => {
 
-      projectCoverContainer.classList.remove('projectsLeftSide__cover');
-      void projectCover.offsetWidth;
-      projectCoverContainer.classList.add('projectsLeftSide__cover');
+        this.changeProject(index);
+
+        const projectCoverContainer = document.querySelector('.projectsLeftSide__cover');
+        const projectCover = document.querySelector('.projectsLeftSide__mask');
+
+        projectCover.classList.remove('projectsLeftSide__mask');
+        void projectCover.offsetWidth;
+        projectCover.classList.add('projectsLeftSide__mask');
+
+        projectCoverContainer.classList.remove('projectsLeftSide__cover');
+        void projectCover.offsetWidth;
+        projectCoverContainer.classList.add('projectsLeftSide__cover');
+      }, 600);
 
     }
   },

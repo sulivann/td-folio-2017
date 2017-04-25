@@ -72,7 +72,7 @@ export default Vue.extend({
   methods: {
 
     bind() {
-      this.handleScrollDown = throttle(this.broadcastScrollDown, 1400, { trailing: false, leading: true });
+      this.handleScrollDown = throttle(this.broadcastScrollDown, 2400, { trailing: false, leading: true });
     },
 
     onWindowResize( {width, height} ) {
@@ -99,45 +99,61 @@ export default Vue.extend({
 
     toggleChangeProjectUp() {
 
-      if (this.projectNumber >= projectsData.length) {
-        this.changeProject(1);
-      }
-      else {
-        this.changeProject(this.projectNumber+1);
-      }
+      const projectName = document.querySelector('.projectsList__name--selected');
 
-      const projectCoverContainer = document.querySelector('.projectsLeftSide__cover');
-      const projectCover = document.querySelector('.projectsLeftSide__mask');
+      projectName.classList.remove('projectsList__name--selected');
+      projectName.classList.add('projectsList__name--hidden');
 
-      projectCover.classList.remove('projectsLeftSide__mask');
-      void projectCover.offsetWidth;
-      projectCover.classList.add('projectsLeftSide__mask');
+      setTimeout( () => {
 
-      projectCoverContainer.classList.remove('projectsLeftSide__cover');
-      void projectCover.offsetWidth;
-      projectCoverContainer.classList.add('projectsLeftSide__cover');
+        if (this.projectNumber >= projectsData.length) {
+          this.changeProject(1);
+        }
+        else {
+          this.changeProject(this.projectNumber+1);
+        }
+
+        const projectCoverContainer = document.querySelector('.projectsLeftSide__cover');
+        const projectCover = document.querySelector('.projectsLeftSide__mask');
+
+        projectCover.classList.remove('projectsLeftSide__mask');
+        void projectCover.offsetWidth;
+        projectCover.classList.add('projectsLeftSide__mask');
+
+        projectCoverContainer.classList.remove('projectsLeftSide__cover');
+        void projectCover.offsetWidth;
+        projectCoverContainer.classList.add('projectsLeftSide__cover');
+      }, 600);
 
     },
 
     toggleChangeProjectDown() {
 
-      if (this.projectNumber <= 1) {
-        this.changeProject(projectsData.length);
-      }
-      else {
-        this.changeProject(this.projectNumber-1);
-      }
+      const projectName = document.querySelector('.projectsList__name--selected');
 
-      const projectCoverContainer = document.querySelector('.projectsLeftSide__cover');
-      const projectCover = document.querySelector('.projectsLeftSide__mask');
+      projectName.classList.remove('projectsList__name--selected');
+      projectName.classList.add('projectsList__name--hidden');
 
-      projectCover.classList.remove('projectsLeftSide__mask');
-      void projectCover.offsetWidth;
-      projectCover.classList.add('projectsLeftSide__mask');
+      setTimeout( () => {
 
-      projectCoverContainer.classList.remove('projectsLeftSide__cover');
-      void projectCover.offsetWidth;
-      projectCoverContainer.classList.add('projectsLeftSide__cover');
+        if (this.projectNumber <= 1) {
+          this.changeProject(projectsData.length);
+        }
+        else {
+          this.changeProject(this.projectNumber-1);
+        }
+
+        const projectCoverContainer = document.querySelector('.projectsLeftSide__cover');
+        const projectCover = document.querySelector('.projectsLeftSide__mask');
+
+        projectCover.classList.remove('projectsLeftSide__mask');
+        void projectCover.offsetWidth;
+        projectCover.classList.add('projectsLeftSide__mask');
+
+        projectCoverContainer.classList.remove('projectsLeftSide__cover');
+        void projectCover.offsetWidth;
+        projectCoverContainer.classList.add('projectsLeftSide__cover');
+      }, 600);
 
     }
 
