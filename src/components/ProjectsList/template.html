@@ -9,8 +9,11 @@
     </div>
 
     <div class="projectsList__container" v-else>
-      <div class="projectsList__name" v-on:click="onChangeProject(index + 1)">
+      <div class="projectsList__name" v-if='isLoaded' v-on:click="onChangeProject(index + 1)">
         {{project.name}}
+      </div>
+      <div class="projectsList__name--faded" v-else v-on:click="onChangeProject(index + 1)">
+        {{project.name}} - {{isLoaded}}
       </div>
       <div class="projectsList__discover" v-if='project.released'>discover</div>
     </div>

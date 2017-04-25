@@ -90,6 +90,18 @@
   }
 }
 
+.projectsList__name--faded {
+  color:$blue-ocean;
+  font-weight:400;
+  cursor:pointer;
+  opacity:0;
+
+  animation-name:fade-in;
+  animation-duration:1200ms;
+  animation-fill-mode:forwards;
+  animation-delay:1200ms;
+}
+
 .projectsList__discover {
   display:none;
 }

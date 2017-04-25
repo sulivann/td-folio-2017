@@ -41,6 +41,9 @@ export default Vue.extend({
     };
   },
 
+  computed: {
+  },
+
   ready() {
   },
 
@@ -50,9 +53,13 @@ export default Vue.extend({
       const projectName = document.querySelector('.projectsList__name--selected');
       const projectCoverContainer = document.querySelector('.projectsLeftSide__cover');
       const projectCover = document.querySelector('.projectsLeftSide__mask');
+      const projectNumber = document.querySelector('.projectRightSide__selectedNumber');
 
       projectName.classList.remove('projectsList__name--selected');
       projectName.classList.add('projectsList__name--hidden');
+
+      projectNumber.classList.remove('projectRightSide__selectedNumber');
+      projectNumber.classList.add('projectRightSide__selectedNumber--hidden');
 
       projectCoverContainer.classList.remove('projectsLeftSide__cover');
       projectCoverContainer.classList.add('projectsLeftSide__cover--hidden');
@@ -68,8 +75,12 @@ export default Vue.extend({
         void projectCover.offsetWidth;
         projectCover.classList.add('projectsLeftSide__mask');
 
+        projectNumber.classList.remove('projectRightSide__selectedNumber--hidden');
+        void projectNumber.offsetWidth;
+        projectNumber.classList.add('projectRightSide__selectedNumber');
+
         projectCoverContainer.classList.remove('projectsLeftSide__cover--hidden');
-        void projectCover.offsetWidth;
+        void projectCoverContainer.offsetWidth;
         projectCoverContainer.classList.add('projectsLeftSide__cover');
       }, 600);
 

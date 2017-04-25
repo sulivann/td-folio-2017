@@ -126,7 +126,7 @@ export default Vue.extend({
         projectCover.classList.add('projectsLeftSide__mask');
 
         projectCoverContainer.classList.remove('projectsLeftSide__cover--hidden');
-        void projectCover.offsetWidth;
+        void projectCoverContainer.offsetWidth;
         projectCoverContainer.classList.add('projectsLeftSide__cover');
       }, 600);
 
@@ -161,7 +161,7 @@ export default Vue.extend({
         projectCover.classList.add('projectsLeftSide__mask');
 
         projectCoverContainer.classList.remove('projectsLeftSide__cover--hidden');
-        void projectCover.offsetWidth;
+        void projectCoverContainer.offsetWidth;
         projectCoverContainer.classList.add('projectsLeftSide__cover');
       }, 600);
 
