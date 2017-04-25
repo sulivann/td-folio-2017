@@ -2,12 +2,12 @@
 
 .projectsList {
   font-size:0.9375rem;
-  // opacity:0;
-  //
-  // animation-name:fade-in;
-  // animation-duration:1200ms;
-  // animation-fill-mode:forwards;
-  // animation-delay:2200ms;
+  opacity:0;
+
+  animation-name:fade-in;
+  animation-duration:500ms;
+  animation-fill-mode:forwards;
+  animation-delay:800ms;
 }
 
 .projectsList__container {
@@ -97,9 +97,9 @@
   opacity:0;
 
   animation-name:fade-in;
-  animation-duration:1200ms;
+  animation-duration:500ms;
   animation-fill-mode:forwards;
-  animation-delay:1200ms;
+  animation-delay:1800ms;
 }
 
 .projectsList__discover {
@@ -110,4 +110,10 @@
   display:block;
   font-weight:500;
   cursor:pointer;
+  opacity:0;
+
+  animation-name:fade-in;
+  animation-duration:500ms;
+  animation-fill-mode:forwards;
+  animation-delay:300ms;
 }

@@ -12,6 +12,14 @@ import {
   projectNumber
 } from 'vuex/projectNumber/getters';
 
+import {
+  updateLoaded
+} from 'vuex/loaded/actions';
+
+import {
+  loaded
+} from 'vuex/loaded/getters';
+
 import projectsData from 'config/projectsData';
 
 export default Vue.extend({
@@ -22,10 +30,12 @@ export default Vue.extend({
 
   vuex: {
     getters: {
-      projectNumber: projectNumber
+      projectNumber: projectNumber,
+      loaded: loaded
     },
     actions: {
-      changeProject
+      changeProject,
+      updateLoaded
     }
   },
 
@@ -42,12 +52,23 @@ export default Vue.extend({
   },
 
   computed: {
+    isLoaded: function() {
+
+      return this.loaded;
+    }
   },
 
   ready() {
+    this.updateLoadedStore();
   },
 
   methods: {
+    updateLoadedStore: function () {
+      setTimeout(() => {
+        this.updateLoaded();
+      }, 2300);
+    },
+
     onChangeProject: function (index) {
 
       const projectName = document.querySelector('.projectsList__name--selected');
