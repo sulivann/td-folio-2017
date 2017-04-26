@@ -49,7 +49,7 @@
 }
 
 .projectsList__name--hidden {
-  font-weight:400;
+  font-weight:500;
   cursor:pointer;
   height:15px;
   overflow:hidden;
@@ -58,7 +58,7 @@
   justify-content:center;
   position:relative;
   padding-left:34px;
-  color:$blue-ocean;
+  color:$black-mine-shaft;
   animation-name:remove-project-padding;
   animation-timing-function:cubic-bezier(0.93, 0.02, 0.54, 1.01);
   animation-duration:500ms;
