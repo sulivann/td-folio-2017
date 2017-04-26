@@ -136,7 +136,7 @@ export default Vue.extend({
         projectCoverContainer.classList.remove('projectsLeftSide__cover--hidden');
         void projectCoverContainer.offsetWidth;
         projectCoverContainer.classList.add('projectsLeftSide__cover');
-      }, 600);
+      }, 1050);
 
     },
 
@@ -179,7 +179,7 @@ export default Vue.extend({
         projectCoverContainer.classList.remove('projectsLeftSide__cover--hidden');
         void projectCoverContainer.offsetWidth;
         projectCoverContainer.classList.add('projectsLeftSide__cover');
-      }, 600);
+      }, 1050);
 
     }
 

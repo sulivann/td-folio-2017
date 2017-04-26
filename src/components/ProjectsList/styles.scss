@@ -17,7 +17,7 @@
 }
 
 .projectsList__name--selected {
-  font-weight:600;
+  font-weight:500;
   cursor:pointer;
   height:15px;
   overflow:hidden;
@@ -26,7 +26,7 @@
   padding-left:0px;
 
   animation-name:add-project-padding;
-  animation-timing-function:ease-out;
+  animation-timing-function:cubic-bezier(0.93, 0.02, 0.54, 1.01);
   animation-duration:500ms;
   animation-fill-mode:forwards;
   animation-delay:900ms;
@@ -35,14 +35,14 @@
     content:'';
     background-color:$black-mine-shaft;
     width:0px;
-    height:2px;
+    height:1px;
     display:block;
     position:absolute;
     top:50%;
     left:0;
 
     animation-name:draw-line-project;
-    animation-timing-function:ease-out;
+    animation-timing-function:cubic-bezier(0.93, 0.02, 0.54, 1.01);
     animation-duration:500ms;
     animation-fill-mode:forwards;
     animation-delay:900ms;
@@ -50,30 +50,30 @@
 }
 
 .projectsList__name--hidden {
-  font-weight:600;
+  font-weight:500;
   cursor:pointer;
   height:15px;
   overflow:hidden;
   display:inline-block;
   position:relative;
-  padding-left:50px;
+  padding-left:34px;
   animation-name:remove-project-padding;
-  animation-timing-function:ease-out;
+  animation-timing-function:cubic-bezier(0.93, 0.02, 0.54, 1.01);
   animation-duration:500ms;
   animation-fill-mode:forwards;
 
   &:after {
     content:'';
     background-color:$black-mine-shaft;
-    width:30px;
-    height:2px;
+    width:14px;
+    height:1px;
     display:block;
     position:absolute;
     top:50%;
     left:0;
 
     animation-name:erase-line-project;
-    animation-timing-function:ease-out;
+    animation-timing-function:cubic-bezier(0.93, 0.02, 0.54, 1.01);
     animation-duration:300ms;
     animation-fill-mode:forwards;
   }
@@ -83,9 +83,9 @@
   color:$blue-ocean;
   font-weight:400;
   cursor:pointer;
+  transition:all .5s ease-out;
 
   &:hover {
-    font-weight:600;
     color:$black-mine-shaft;
   }
 }
