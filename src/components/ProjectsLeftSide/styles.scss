@@ -40,12 +40,17 @@
   }
 }
 
-.projectsLeftSide__cover {
+.projectsLeftSide__container {
   height:60%;
   width:100%;
   min-height:33.5rem;
   overflow:hidden;
   position:relative;
+}
+
+.projectsLeftSide__cover {
+  height:100%;
+  width:100%;
   background-size:cover;
   background-position:center center;
   cursor:pointer;
@@ -57,11 +62,8 @@
 }
 
 .projectsLeftSide__cover--hidden {
-  height:60%;
   width:100%;
-  min-height:33.5rem;
-  overflow:hidden;
-  position:relative;
+  height:100%;
   background-size:cover;
   background-position:center center;
   cursor:pointer;
