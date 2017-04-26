@@ -47,13 +47,18 @@
 }
 
 @keyframes add-project-padding {
-  to {
+  100% {
     padding-left:34px;
+    color:$black-mine-shaft;
+    font-weight:500;
   }
 }
 
 @keyframes remove-project-padding {
-  to {
+  50% {
+
+  }
+  100% {
     padding-left:0px;
   }
 }

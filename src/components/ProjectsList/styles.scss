@@ -17,19 +17,18 @@
 }
 
 .projectsList__name--selected {
-  font-weight:500;
   cursor:pointer;
   height:15px;
   overflow:hidden;
-  display:inline-block;
   position:relative;
   padding-left:0px;
+  color:$blue-ocean;
 
   animation-name:add-project-padding;
   animation-timing-function:cubic-bezier(0.93, 0.02, 0.54, 1.01);
   animation-duration:500ms;
   animation-fill-mode:forwards;
-  animation-delay:900ms;
+  animation-delay:700ms;
 
   &:after {
     content:'';
@@ -45,18 +44,21 @@
     animation-timing-function:cubic-bezier(0.93, 0.02, 0.54, 1.01);
     animation-duration:500ms;
     animation-fill-mode:forwards;
-    animation-delay:900ms;
+    animation-delay:700ms;
   }
 }
 
 .projectsList__name--hidden {
-  font-weight:500;
+  font-weight:400;
   cursor:pointer;
   height:15px;
   overflow:hidden;
-  display:inline-block;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   position:relative;
   padding-left:34px;
+  color:$blue-ocean;
   animation-name:remove-project-padding;
   animation-timing-function:cubic-bezier(0.93, 0.02, 0.54, 1.01);
   animation-duration:500ms;
