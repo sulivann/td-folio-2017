@@ -83,7 +83,7 @@
   color:$blue-ocean;
   font-weight:400;
   cursor:pointer;
-  transition:all .5s ease-out;
+  transition:all 750ms ease-out;
 
   &:hover {
     color:$black-mine-shaft;
@@ -103,17 +103,35 @@
 }
 
 .projectsList__discover {
-  display:none;
+  display:block;
+  font-weight:500;
+  cursor:pointer;
+  height:15px;
+  overflow:hidden;
+
+  span {
+    display:block;
+
+    animation-name:typo-slide-down;
+    animation-duration:650ms;
+    animation-fill-mode:forwards;
+  }
 }
 
 .projectsList__discover--active {
   display:block;
   font-weight:500;
   cursor:pointer;
-  opacity:0;
+  height:15px;
+  overflow:hidden;
 
-  animation-name:fade-in;
-  animation-duration:500ms;
-  animation-fill-mode:forwards;
-  animation-delay:300ms;
+  span {
+    display:block;
+    transform:translate3d(0, 100%, 0);
+
+    animation-name:typo-slide-up;
+    animation-duration:650ms;
+    animation-fill-mode:forwards;
+    animation-delay:1200ms;
+  }
 }

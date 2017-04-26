@@ -75,9 +75,15 @@ export default Vue.extend({
       const projectCoverContainer = document.querySelector('.projectsLeftSide__cover');
       const projectCover = document.querySelector('.projectsLeftSide__mask');
       const projectNumber = document.querySelector('.projectRightSide__selectedNumber');
+      const projectDiscover = document.querySelector('.projectsList__discover--active');
 
       projectName.classList.remove('projectsList__name--selected');
       projectName.classList.add('projectsList__name--hidden');
+
+      if(projectDiscover) {
+        projectDiscover.classList.remove('projectsList__discover--active');
+        projectDiscover.classList.add('projectsList__discover');
+      }
 
       projectNumber.classList.remove('projectRightSide__selectedNumber');
       projectNumber.classList.add('projectRightSide__selectedNumber--hidden');
