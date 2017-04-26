@@ -101,3 +101,12 @@
     transform:translate3d(0, 0, 0);
   }
 }
+
+@keyframes change-color {
+  from {
+    color:$black-mine-shaft;
+  }
+  to {
+    color:$blue-ocean;
+  }
+}

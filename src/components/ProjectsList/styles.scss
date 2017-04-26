@@ -53,9 +53,6 @@
   cursor:pointer;
   height:15px;
   overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
   position:relative;
   padding-left:34px;
   color:$black-mine-shaft;
@@ -102,6 +99,21 @@
   animation-duration:500ms;
   animation-fill-mode:forwards;
   animation-delay:1800ms;
+}
+
+.projectsList__name--previous {
+  color:$black-mine-shaft;
+  font-weight:400;
+  cursor:pointer;
+  transition:all 750ms ease-out;
+
+  animation-name:change-color;
+  animation-duration:750ms;
+  animation-fill-mode:forwards;
+
+  &:hover {
+    color:$black-mine-shaft;
+  }
 }
 
 .projectsList__discover {

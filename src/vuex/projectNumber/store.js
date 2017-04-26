@@ -5,11 +5,13 @@ import {
 } from '../mutation-types';
 
 const state = {
-  projectNumber: 1
+  projectNumber: 1,
+  prevProjectNumber: 0
 };
 
 const mutations = {
   [ CHANGE_PROJECT ] (state, n) {
+    state.prevProjectNumber = state.projectNumber;
     state.projectNumber = n;
   }
 };

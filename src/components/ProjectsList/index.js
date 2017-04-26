@@ -13,6 +13,10 @@ import {
 } from 'vuex/projectNumber/getters';
 
 import {
+  prevProjectNumber
+} from 'vuex/projectNumber/getters';
+
+import {
   updateLoaded
 } from 'vuex/loaded/actions';
 
@@ -31,6 +35,7 @@ export default Vue.extend({
   vuex: {
     getters: {
       projectNumber: projectNumber,
+      prevProjectNumber: prevProjectNumber,
       loaded: loaded
     },
     actions: {
