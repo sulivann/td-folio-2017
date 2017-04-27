@@ -71,7 +71,7 @@ export default Vue.extend({
     updateLoadedStore: function () {
       setTimeout(() => {
         this.updateLoaded();
-      }, 2300);
+      }, 2700);
     },
 
     onChangeProject: function (index) {

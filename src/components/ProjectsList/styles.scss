@@ -28,7 +28,7 @@
   animation-timing-function:cubic-bezier(0.93, 0.02, 0.54, 1.01);
   animation-duration:500ms;
   animation-fill-mode:forwards;
-  animation-delay:700ms;
+  animation-delay:1100ms;
 
   &:after {
     content:'';
@@ -44,7 +44,7 @@
     animation-timing-function:cubic-bezier(0.93, 0.02, 0.54, 1.01);
     animation-duration:500ms;
     animation-fill-mode:forwards;
-    animation-delay:700ms;
+    animation-delay:1100ms;
   }
 }
 
@@ -98,7 +98,7 @@
   animation-name:fade-in;
   animation-duration:500ms;
   animation-fill-mode:forwards;
-  animation-delay:1800ms;
+  animation-delay:2200ms;
 }
 
 .projectsList__name--previous {
