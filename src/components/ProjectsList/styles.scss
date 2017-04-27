@@ -111,7 +111,7 @@
   animation-fill-mode:forwards;
 
   &:hover {
-    color:$black-mine-shaft;
+    animation-name:change-color-hover;
   }
 }
 

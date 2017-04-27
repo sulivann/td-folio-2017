@@ -110,3 +110,12 @@
     color:$blue-ocean;
   }
 }
+
+@keyframes change-color-hover {
+  from {
+    color:$blue-ocean;
+  }
+  to {
+    color:$black-mine-shaft;
+  }
+}
