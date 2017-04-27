@@ -48,6 +48,38 @@
   }
 }
 
+.projectsList__name--selectedInteracted {
+  height:15px;
+  overflow:hidden;
+  position:relative;
+  padding-left:0px;
+  color:$blue-ocean;
+  font-weight:400;
+
+  animation-name:add-project-padding;
+  animation-timing-function:cubic-bezier(0.93, 0.02, 0.54, 1.01);
+  animation-duration:500ms;
+  animation-fill-mode:forwards;
+  animation-delay:700ms;
+
+  &:after {
+    content:'';
+    background-color:$black-mine-shaft;
+    width:0px;
+    height:1px;
+    display:block;
+    position:absolute;
+    top:50%;
+    left:0;
+
+    animation-name:draw-line-project;
+    animation-timing-function:cubic-bezier(0.93, 0.02, 0.54, 1.01);
+    animation-duration:500ms;
+    animation-fill-mode:forwards;
+    animation-delay:700ms;
+  }
+}
+
 .projectsList__name--hidden {
   font-weight:500;
   cursor:pointer;
@@ -132,6 +164,7 @@
   }
 }
 
+
 .projectsList__discover--active {
   display:block;
   font-weight:500;
@@ -147,6 +180,30 @@
     animation-duration:650ms;
     animation-fill-mode:forwards;
     animation-delay:1600ms;
+  }
+
+  transition:all 750ms ease-out;
+
+  &:hover {
+    opacity:0.6;
+  }
+}
+
+.projectsList__discover--activeInteracted {
+  display:block;
+  font-weight:500;
+  cursor:pointer;
+  height:15px;
+  overflow:hidden;
+
+  span {
+    display:block;
+    transform:translate3d(0, 100%, 0);
+
+    animation-name:typo-slide-up;
+    animation-duration:650ms;
+    animation-fill-mode:forwards;
+    animation-delay:1200ms;
   }
 
   transition:all 750ms ease-out;

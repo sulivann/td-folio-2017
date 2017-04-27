@@ -9,20 +9,19 @@ import {
 } from 'vuex/projectNumber/actions';
 
 import {
-  projectNumber
-} from 'vuex/projectNumber/getters';
-
-import {
+  projectNumber,
   prevProjectNumber
 } from 'vuex/projectNumber/getters';
 
 import {
-  updateLoaded
-} from 'vuex/loaded/actions';
+  updateLoaded,
+  updateInteraction
+} from 'vuex/status/actions';
 
 import {
-  loaded
-} from 'vuex/loaded/getters';
+  loaded,
+  interaction
+} from 'vuex/status/getters';
 
 import projectsData from 'config/projectsData';
 
@@ -36,11 +35,13 @@ export default Vue.extend({
     getters: {
       projectNumber: projectNumber,
       prevProjectNumber: prevProjectNumber,
-      loaded: loaded
+      loaded: loaded,
+      interaction: interaction
     },
     actions: {
       changeProject,
-      updateLoaded
+      updateLoaded,
+      updateInteraction
     }
   },
 
@@ -76,21 +77,24 @@ export default Vue.extend({
 
     onChangeProject: function (index) {
 
-      const projectName = document.querySelector('.projectsList__name--selected');
+      const projectName = document.querySelector('.projectsList__name--selected, .projectsList__name--selectedInteracted');
       const projectCoverContainer = document.querySelector('.projectsLeftSide__cover');
       const projectCover = document.querySelector('.projectsLeftSide__mask');
-      const projectNumber = document.querySelector('.projectRightSide__selectedNumber');
-      const projectDiscover = document.querySelector('.projectsList__discover--active');
+      const projectNumber = document.querySelector('.projectRightSide__selectedNumber, .projectRightSide__selectedNumber--interacted');
+      const projectDiscover = document.querySelector('.projectsList__discover--active, .projectsList__discover--activeInteracted');
 
       projectName.classList.remove('projectsList__name--selected');
+      projectName.classList.remove('projectsList__name--selectedInteracted');
       projectName.classList.add('projectsList__name--hidden');
 
       if(projectDiscover) {
         projectDiscover.classList.remove('projectsList__discover--active');
+        projectDiscover.classList.remove('projectsList__discover--activeInteracted');
         projectDiscover.classList.add('projectsList__discover');
       }
 
       projectNumber.classList.remove('projectRightSide__selectedNumber');
+      projectNumber.classList.remove('projectRightSide__selectedNumber--interacted');
       projectNumber.classList.add('projectRightSide__selectedNumber--hidden');
 
       projectCoverContainer.classList.remove('projectsLeftSide__cover');
@@ -100,6 +104,8 @@ export default Vue.extend({
       projectCover.classList.add('projectsLeftSide__mask--scrolled');
 
       setTimeout( () => {
+
+        this.updateInteraction();
 
         this.changeProject(index);
 

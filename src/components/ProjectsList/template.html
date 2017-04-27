@@ -1,11 +1,20 @@
 <ul class="projectsList">
 
   <li v-for="(index, project) in projectsData">
-    <div class="projectsList__container" v-if='index == (projectNumber - 1)'>
-      <div class="projectsList__name--selected">
+    <div class="projectsList__container" v-if='index == (projectNumber - 1) && !(interaction)'>
+      <div class="projectsList__name--selected" v-link="{ name: 'project', params: { projectName: project.slug }}">
         {{project.name}}
       </div>
       <div class="projectsList__discover--active" v-if='project.released' v-link="{ name: 'project', params: { projectName: project.slug }}">
+        <span>discover</span>
+      </div>
+    </div>
+
+    <div class="projectsList__container" v-if='(index == (projectNumber - 1) && interaction)'>
+      <div class="projectsList__name--selectedInteracted" v-link="{ name: 'project', params: { projectName: project.slug }}">
+        {{project.name}}
+      </div>
+      <div class="projectsList__discover--activeInteracted" v-if='project.released' v-link="{ name: 'project', params: { projectName: project.slug }}">
         <span>discover</span>
       </div>
     </div>
