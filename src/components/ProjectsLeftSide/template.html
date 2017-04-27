@@ -9,7 +9,8 @@
   </nav>
 
   <div class="projectsLeftSide__container">
-    <div class="projectsLeftSide__cover" v-bind:style="projectCover" v-link="{ name: 'project', params: { projectName: projectSlug }}"></div>
+    <div class="projectsLeftSide__cover" v-bind:style="projectCover" v-link="{ name: 'project', params: { projectName: projectSlug }}" v-if="isReleased"></div>
+    <div class="projectsLeftSide__cover not-released" v-bind:style="projectCover" v-else></div>
     <div class="projectsLeftSide__mask"></div>
   </div>
 

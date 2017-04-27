@@ -48,6 +48,11 @@ export default Vue.extend({
       };
     },
 
+    isReleased: function () {
+
+      return projectsData[this.projectNumber-1].released;
+    },
+
     projectSlug: function () {
       return projectsData[this.projectNumber-1].slug;
     }

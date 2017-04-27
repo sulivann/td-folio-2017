@@ -148,4 +148,10 @@
     animation-fill-mode:forwards;
     animation-delay:1200ms;
   }
+
+  transition:all 750ms ease-out;
+
+  &:hover {
+    opacity:0.6;
+  }
 }
