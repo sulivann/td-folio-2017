@@ -5,7 +5,7 @@ import './styles.scss';
 import throttle from 'lodash.throttle';
 
 import EventManagerMixin from 'mixins/EventManagerMixin';
-//import FadeTransitionMixin from 'mixins/FadeTransitionMixin';
+import HomeTransitionMixin from 'mixins/HomeTransitionMixin';
 
 import {
   WINDOW_RESIZE
@@ -27,7 +27,7 @@ import ProjectsRightSide from 'components/ProjectsRightSide';
 
 export default Vue.extend({
 
-  mixins: [ EventManagerMixin ],
+  mixins: [ EventManagerMixin, HomeTransitionMixin ],
 
   template: require( './template.html' ),
 
