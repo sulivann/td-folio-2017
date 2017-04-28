@@ -2,6 +2,8 @@
 
 import './styles.scss';
 
+import { TweenMax } from 'gsap';
+
 import EventManagerMixin from 'mixins/EventManagerMixin';
 
 import {

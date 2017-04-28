@@ -30,6 +30,8 @@
   animation-fill-mode:forwards;
   animation-delay:1100ms;
 
+  cursor:pointer;
+
   &:after {
     content:'';
     background-color:$black-mine-shaft;
@@ -46,6 +48,23 @@
     animation-fill-mode:forwards;
     animation-delay:1100ms;
   }
+
+  // &:hover {
+  //   animation-name:hover-projet-padding;
+  //   animation-timing-function:ease-out;;
+  //   animation-duration:300ms;
+  //   color:$black-mine-shaft;
+  //   font-weight:600;
+  //   animation-delay:0s;
+  //
+  //   &:after {
+  //     animation-name:hover-move-line;
+  //     animation-timing-function:ease-out;;
+  //     animation-duration:300ms;
+  //     width:14px;
+  //     animation-delay:0s;
+  //   }
+  // }
 }
 
 .projectsList__name--selectedInteracted {

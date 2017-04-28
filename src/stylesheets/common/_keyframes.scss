@@ -55,11 +55,28 @@
 }
 
 @keyframes remove-project-padding {
-  50% {
+  100% {
+    padding-left:0px;
+  }
+}
 
+@keyframes hover-projet-padding {
+  0% {
+    padding-left:34px;
+    padding-right:0px;
   }
   100% {
     padding-left:0px;
+    padding-right:34px;
+  }
+}
+
+@keyframes hover-move-line {
+  from {
+    left:0;
+  }
+  to {
+    left:calc(100% - 14px);
   }
 }
 
