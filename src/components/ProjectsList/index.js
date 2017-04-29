@@ -2,8 +2,6 @@
 
 import './styles.scss';
 
-import { TweenMax } from 'gsap';
-
 import EventManagerMixin from 'mixins/EventManagerMixin';
 
 import {
@@ -115,13 +113,6 @@ export default Vue.extend({
         void projectCover.offsetWidth;
         projectCover.classList.add('projectsLeftSide__mask');
 
-        projectNumber.classList.remove('projectRightSide__selectedNumber--hidden');
-        void projectNumber.offsetWidth;
-        projectNumber.classList.add('projectRightSide__selectedNumber');
-
-        projectCoverContainer.classList.remove('projectsLeftSide__cover--hidden');
-        void projectCoverContainer.offsetWidth;
-        projectCoverContainer.classList.add('projectsLeftSide__cover');
       }, 1050);
 
     }

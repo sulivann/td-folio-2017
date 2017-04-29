@@ -48,23 +48,6 @@
     animation-fill-mode:forwards;
     animation-delay:1100ms;
   }
-
-  &:hover {
-    animation-name:hover-projet-padding;
-    animation-timing-function:ease-out;;
-    animation-duration:300ms;
-    color:$black-mine-shaft;
-    font-weight:600;
-    animation-delay:0s;
-
-    &:after {
-      animation-name:hover-move-line;
-      animation-timing-function:ease-out;;
-      animation-duration:300ms;
-      width:14px;
-      animation-delay:0s;
-    }
-  }
 }
 
 .projectsList__name--selectedInteracted {
@@ -96,23 +79,6 @@
     animation-duration:500ms;
     animation-fill-mode:forwards;
     animation-delay:700ms;
-  }
-
-  &:hover {
-    animation-name:hover-projet-padding;
-    animation-timing-function:ease-out;;
-    animation-duration:300ms;
-    color:$black-mine-shaft;
-    font-weight:600;
-    animation-delay:0s;
-
-    &:after {
-      animation-name:hover-move-line;
-      animation-timing-function:ease-out;;
-      animation-duration:300ms;
-      width:14px;
-      animation-delay:0s;
-    }
   }
 }
 
@@ -146,7 +112,7 @@
   }
 }
 
-.projectsList__name {
+.projectsList__name--interacted {
   color:$blue-ocean;
   font-weight:400;
   cursor:pointer;
@@ -157,7 +123,7 @@
   }
 }
 
-.projectsList__name--faded {
+.projectsList__name {
   color:$blue-ocean;
   font-weight:400;
   cursor:pointer;

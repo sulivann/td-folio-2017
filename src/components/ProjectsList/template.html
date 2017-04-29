@@ -26,10 +26,10 @@
     </div>
 
     <div class="projectsList__container" v-if='(index != (projectNumber - 1)) && (index != (prevProjectNumber - 1))'>
-      <div class="projectsList__name" v-if='isLoaded' v-on:click="onChangeProject(index + 1)">
+      <div class="projectsList__name--interacted" v-if='isLoaded' v-on:click="onChangeProject(index + 1)">
         {{project.name}}
       </div>
-      <div class="projectsList__name--faded" v-else v-on:click="onChangeProject(index + 1)">
+      <div class="projectsList__name" v-else v-on:click="onChangeProject(index + 1)">
         {{project.name}}
       </div>
     </div>
