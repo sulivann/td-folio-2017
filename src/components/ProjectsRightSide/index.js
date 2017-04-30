@@ -63,11 +63,11 @@ export default Vue.extend({
       for(const el of selectedWorks) {
         el.classList.add('projectsRightSide__typo--enter');
       }
-    }, 600);
+    }, 1100);
 
     setTimeout(() => {
       projectNumber.classList.add('projectRightSide__selectedNumber--enter');
-    }, 1600);
+    }, 2100);
 
   },
 

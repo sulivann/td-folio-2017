@@ -43,7 +43,7 @@
   }
 }
 
-.projectsList__name--selectedInteracted {
+.projectsList__name--selectedIsLoaded {
   height:15px;
   overflow:hidden;
   position:relative;
@@ -66,14 +66,17 @@
   &:hover {
     padding-left:0px;
     padding-right:34px;
+    transition:all 500ms cubic-bezier(0.62, 0.26, 0, 1.02);
 
     &:after {
       left:calc(100% - 14px);
+      transition:all 500ms cubic-bezier(0.62, 0.26, 0, 1.02);
     }
   }
 }
 
-.projectsList__name--enter {
+
+.projectsList__name--selectedEnter {
   padding-left:34px;
   font-weight:600;
   color:$black-mine-shaft;
@@ -86,45 +89,26 @@
   }
 }
 
-.projectsList__name--hidden {
-  font-weight:500;
-  cursor:pointer;
-  height:15px;
-  overflow:hidden;
-  position:relative;
-  padding-left:34px;
-  color:$black-mine-shaft;
-  animation-name:remove-project-padding;
-  animation-timing-function:cubic-bezier(0.93, 0.02, 0.54, 1.01);
-  animation-duration:500ms;
-  animation-fill-mode:forwards;
+.projectsList__name--selectedOut {
+  transition:all 500ms cubic-bezier(0.93, 0.02, 0.54, 1.01);
+  padding-left:0px;
+  font-weight:400;
 
   &:after {
-    content:'';
-    background-color:$black-mine-shaft;
-    width:14px;
-    height:1px;
-    display:block;
-    position:absolute;
-    top:50%;
-    left:0;
-
-    animation-name:erase-line-project;
-    animation-timing-function:cubic-bezier(0.93, 0.02, 0.54, 1.01);
-    animation-duration:300ms;
-    animation-fill-mode:forwards;
+    width:0px;
+    transition:all 500ms cubic-bezier(0.93, 0.02, 0.54, 1.01);
   }
 }
 
-.projectsList__name--interacted {
-  color:$blue-ocean;
+.projectsList__name--previous {
+  color:$black-mine-shaft;
   font-weight:400;
   cursor:pointer;
-  transition:all 750ms ease-out;
+}
 
-  &:hover {
-    color:$black-mine-shaft;
-  }
+.projectsList__name--previousEnter {
+  color:$blue-ocean;
+  transition:all 750ms ease-out;
 }
 
 .projectsList__name {
@@ -133,41 +117,26 @@
   cursor:pointer;
   opacity:0;
 
-  animation-name:fade-in;
-  animation-duration:500ms;
-  animation-fill-mode:forwards;
-  animation-delay:2000ms;
+  &:hover {
+    color:$black-mine-shaft;
+    transition:all 750ms ease-out;
+  }
 }
 
-.projectsList__name--previous {
-  color:$black-mine-shaft;
+.projectsList__name--isLoaded {
+  color:$blue-ocean;
   font-weight:400;
   cursor:pointer;
-  transition:all 750ms ease-out;
-
-  animation-name:change-color;
-  animation-duration:750ms;
-  animation-fill-mode:forwards;
 
   &:hover {
-    animation-name:change-color-hover;
+    color:$black-mine-shaft;
+    transition:all 750ms ease-out;
   }
 }
 
-.projectsList__discover {
-  display:block;
-  font-weight:500;
-  cursor:pointer;
-  height:15px;
-  overflow:hidden;
-
-  span {
-    display:block;
-
-    animation-name:typo-slide-down;
-    animation-duration:650ms;
-    animation-fill-mode:forwards;
-  }
+.projectsList__name--enter {
+  opacity:1;
+  transition:all 500ms ease-out;
 }
 
 
@@ -181,11 +150,6 @@
   span {
     display:block;
     transform:translate3d(0, 100%, 0);
-
-    animation-name:typo-slide-up;
-    animation-duration:650ms;
-    animation-fill-mode:forwards;
-    animation-delay:1600ms;
   }
 
   &:hover {
@@ -195,30 +159,15 @@
 }
 
 .projectsList__discover--enter {
-  transform:translate3d(0, 0, 0);
-  transition:transform 650ms ease-out;
+  span {
+    transform:translate3d(0, 0, 0);
+    transition:transform 650ms ease-out;
+  }
 }
 
-.projectsList__discover--activeInteracted {
-  display:block;
-  font-weight:500;
-  cursor:pointer;
-  height:15px;
-  overflow:hidden;
-
+.projectsList__discover {
   span {
-    display:block;
     transform:translate3d(0, 100%, 0);
-
-    animation-name:typo-slide-up;
-    animation-duration:650ms;
-    animation-fill-mode:forwards;
-    animation-delay:1200ms;
-  }
-
-  transition:all 750ms ease-out;
-
-  &:hover {
-    opacity:0.6;
+    transition:transform 650ms ease-out;
   }
 }

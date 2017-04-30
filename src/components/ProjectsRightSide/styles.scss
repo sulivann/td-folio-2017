@@ -41,6 +41,11 @@
   transform:translate3d(0, 0, 0);
 }
 
+.projectRightSide__selectedNumber--out {
+  transition:transform 600ms ease-out;
+  transform:translate3d(0, 100%, 0);
+}
+
 .projectRightSide__selectedNumber--interacted {
   font-weight:500;
   font-size:0.9375rem;

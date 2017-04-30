@@ -1,35 +1,30 @@
 <ul class="projectsList">
 
   <li v-for="(index, project) in projectsData">
-    <div class="projectsList__container" v-if='index == (projectNumber - 1) && !(interaction)'>
-      <div class="projectsList__name--selected" v-link="{ name: 'project', params: { projectName: project.slug }}">
+    <div class="projectsList__container" v-if='index == (projectNumber - 1)'>
+      <div class="projectsList__name--selectedIsLoaded" v-if="isLoaded" v-link="{ name: 'project', params: { projectName: project.slug }}">
         {{project.name}}
       </div>
+      <div class="projectsList__name--selected" v-else v-link="{ name: 'project', params: { projectName: project.slug }}">
+        {{project.name}}
+      </div>
+
       <div class="projectsList__discover--active" v-if='project.released' v-link="{ name: 'project', params: { projectName: project.slug }}">
         <span>discover</span>
       </div>
     </div>
 
-    <div class="projectsList__container" v-if='(index == (projectNumber - 1) && interaction)'>
-      <div class="projectsList__name--selectedInteracted" v-link="{ name: 'project', params: { projectName: project.slug }}">
-        {{project.name}}
-      </div>
-      <div class="projectsList__discover--activeInteracted" v-if='project.released' v-link="{ name: 'project', params: { projectName: project.slug }}">
-        <span>discover</span>
-      </div>
-    </div>
-
-    <div class="projectsList__container" v-if='(index != (projectNumber - 1)) && (index == (prevProjectNumber - 1))'>
-      <div class="projectsList__name--previous" v-on:click="onChangeProject(index + 1)">
-        {{project.name}}
-      </div>
-    </div>
-
     <div class="projectsList__container" v-if='(index != (projectNumber - 1)) && (index != (prevProjectNumber - 1))'>
-      <div class="projectsList__name--interacted" v-if='isLoaded' v-on:click="onChangeProject(index + 1)">
+      <div class="projectsList__name--isLoaded" v-if="isLoaded" v-on:click="handleOnChangeProject(index + 1)">
         {{project.name}}
       </div>
-      <div class="projectsList__name" v-else v-on:click="onChangeProject(index + 1)">
+      <div class="projectsList__name" v-else v-on:click="handleOnChangeProject(index + 1)">
+        {{project.name}}
+      </div>
+    </div>
+
+    <div class="projectsList__container" v-if='index == (prevProjectNumber - 1)'>
+      <div class="projectsList__name--previous" v-on:click="handleOnChangeProject(index + 1)">
         {{project.name}}
       </div>
     </div>

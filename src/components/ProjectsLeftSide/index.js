@@ -58,15 +58,14 @@ export default Vue.extend({
     const coverMask = document.querySelector('.projectsLeftSide__mask');
     const about = document.querySelector('.projectsLeftSide__about');
 
-
     setTimeout(() => {
       cover.classList.add('projectsLeftSide__cover--enter');
       coverMask.classList.add('projectsLeftSide__mask--enter');
-    }, 1);
+    }, 500);
 
     setTimeout(() => {
       about.classList.add('projectsLeftSide__about--enter');
-    }, 1600);
+    }, 2100);
 
   },
 

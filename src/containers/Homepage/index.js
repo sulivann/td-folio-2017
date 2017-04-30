@@ -104,33 +104,23 @@ export default Vue.extend({
 
     toggleChangeProjectUp() {
 
-      const projectName = document.querySelector('.projectsList__name--selected, .projectsList__name--selectedInteracted');
-      const projectCoverContainer = document.querySelector('.projectsLeftSide__cover');
-      const projectCover = document.querySelector('.projectsLeftSide__mask');
-      const projectNumber = document.querySelector('.projectRightSide__selectedNumber, .projectRightSide__selectedNumber--interacted');
-      const projectDiscover = document.querySelector('.projectsList__discover--active, .projectsList__discover--activeInteracted');
+      let projectName = document.querySelector('.projectsList__name--selected, .projectsList__name--selectedIsLoaded');
+      let discover = document.querySelector('.projectsList__discover--active');
+      let cover = document.querySelector('.projectsLeftSide__cover');
+      const selectedNumber = document.querySelector('.projectRightSide__selectedNumber');
+      const coverMask = document.querySelector('.projectsLeftSide__mask');
 
-      projectName.classList.remove('projectsList__name--selected');
-      projectName.classList.remove('projectsList__name--selectedInteracted');
-      projectName.classList.add('projectsList__name--hidden');
+      projectName.classList.add('projectsList__name--selectedOut');
 
-      if(projectDiscover) {
-        projectDiscover.classList.remove('projectsList__discover--active');
-        projectDiscover.classList.remove('projectsList__discover--activeInteracted');
-        projectDiscover.classList.add('projectsList__discover');
+      if (discover) {
+        discover.classList.add('projectsList__discover');
       }
 
-      projectNumber.classList.remove('projectRightSide__selectedNumber');
-      projectNumber.classList.remove('projectRightSide__selectedNumber--interacted');
-      projectNumber.classList.add('projectRightSide__selectedNumber--hidden');
+      cover.classList.add('projectsLeftSide__cover--out');
+      coverMask.classList.add('projectsLeftSide__mask--out');
+      selectedNumber.classList.add('projectRightSide__selectedNumber--out');
 
-      projectCoverContainer.classList.remove('projectsLeftSide__cover');
-      projectCoverContainer.classList.add('projectsLeftSide__cover--hidden');
-
-      projectCover.classList.remove('projectsLeftSide__mask');
-      projectCover.classList.add('projectsLeftSide__mask--scrolled');
-
-      setTimeout( () => {
+      setTimeout(() => {
 
         this.updateInteraction();
 
@@ -141,17 +131,38 @@ export default Vue.extend({
           this.changeProject(this.projectNumber+1);
         }
 
-        projectCover.classList.remove('projectsLeftSide__mask--scrolled');
-        void projectCover.offsetWidth;
-        projectCover.classList.add('projectsLeftSide__mask');
+        setTimeout(() => {
+          cover = document.querySelector('.projectsLeftSide__cover');
 
-        setTimeout ( () => {
+          coverMask.classList.remove('projectsLeftSide__mask--out');
+          coverMask.classList.remove('projectsLeftSide__mask--enter');
+          void coverMask.offsetWidth;
+          coverMask.classList.add('projectsLeftSide__mask--enter');
 
-          const projectName = document.querySelector('.projectsList__name--selected, .projectsList__name--selectedInteracted');
+          cover.classList.remove('projectsLeftSide__cover--out');
+          cover.classList.remove('projectsLeftSide__cover--enter');
+          void cover.offsetWidth;
+          cover.classList.add('projectsLeftSide__cover--enter');
 
-          projectName.classList.add('projectsList__name--translated');
+          const prevProject = document.querySelector('.projectsList__name--previous');
+          prevProject.classList.add('projectsList__name--previousEnter');
+        }, 1);
 
+        setTimeout(() => {
+          projectName = document.querySelector('.projectsList__name--selected, .projectsList__name--selectedIsLoaded');
+          projectName.classList.add('projectsList__name--selectedEnter');
         }, 700);
+
+        setTimeout(() => {
+          discover = document.querySelector('.projectsList__discover--active');
+          if (discover) {
+            discover = document.querySelector('.projectsList__discover--active');
+            discover.classList.add('projectsList__discover--enter');
+          }
+
+          selectedNumber.classList.remove('projectRightSide__selectedNumber--out');
+          selectedNumber.classList.add('projectRightSide__selectedNumber--enter');
+        }, 1200);
 
       }, 1050);
 
@@ -159,33 +170,23 @@ export default Vue.extend({
 
     toggleChangeProjectDown() {
 
-      const projectName = document.querySelector('.projectsList__name--selected, .projectsList__name--selectedInteracted');
-      const projectCoverContainer = document.querySelector('.projectsLeftSide__cover');
-      const projectCover = document.querySelector('.projectsLeftSide__mask');
-      const projectNumber = document.querySelector('.projectRightSide__selectedNumber, .projectRightSide__selectedNumber--interacted');
-      const projectDiscover = document.querySelector('.projectsList__discover--active, .projectsList__discover--activeInteracted');
+      let projectName = document.querySelector('.projectsList__name--selected, .projectsList__name--selectedIsLoaded');
+      let discover = document.querySelector('.projectsList__discover--active');
+      let cover = document.querySelector('.projectsLeftSide__cover');
+      const selectedNumber = document.querySelector('.projectRightSide__selectedNumber');
+      const coverMask = document.querySelector('.projectsLeftSide__mask');
 
-      projectName.classList.remove('projectsList__name--selected');
-      projectName.classList.remove('projectsList__name--selectedInteracted');
-      projectName.classList.add('projectsList__name--hidden');
+      projectName.classList.add('projectsList__name--selectedOut');
 
-      if(projectDiscover) {
-        projectDiscover.classList.remove('projectsList__discover--active');
-        projectDiscover.classList.remove('projectsList__discover--activeInteracted');
-        projectDiscover.classList.add('projectsList__discover');
+      if (discover) {
+        discover.classList.add('projectsList__discover');
       }
 
-      projectNumber.classList.remove('projectRightSide__selectedNumber');
-      projectNumber.classList.remove('projectRightSide__selectedNumber--interacted');
-      projectNumber.classList.add('projectRightSide__selectedNumber--hidden');
+      cover.classList.add('projectsLeftSide__cover--out');
+      coverMask.classList.add('projectsLeftSide__mask--out');
+      selectedNumber.classList.add('projectRightSide__selectedNumber--out');
 
-      projectCoverContainer.classList.remove('projectsLeftSide__cover');
-      projectCoverContainer.classList.add('projectsLeftSide__cover--hidden');
-
-      projectCover.classList.remove('projectsLeftSide__mask');
-      projectCover.classList.add('projectsLeftSide__mask--scrolled');
-
-      setTimeout( () => {
+      setTimeout(() => {
 
         this.updateInteraction();
 
@@ -196,17 +197,38 @@ export default Vue.extend({
           this.changeProject(this.projectNumber-1);
         }
 
-        projectCover.classList.remove('projectsLeftSide__mask--scrolled');
-        void projectCover.offsetWidth;
-        projectCover.classList.add('projectsLeftSide__mask');
+        setTimeout(() => {
+          cover = document.querySelector('.projectsLeftSide__cover');
 
-        setTimeout ( () => {
+          coverMask.classList.remove('projectsLeftSide__mask--out');
+          coverMask.classList.remove('projectsLeftSide__mask--enter');
+          void coverMask.offsetWidth;
+          coverMask.classList.add('projectsLeftSide__mask--enter');
 
-          const projectName = document.querySelector('.projectsList__name--selected, .projectsList__name--selectedInteracted');
+          cover.classList.remove('projectsLeftSide__cover--out');
+          cover.classList.remove('projectsLeftSide__cover--enter');
+          void cover.offsetWidth;
+          cover.classList.add('projectsLeftSide__cover--enter');
 
-          projectName.classList.add('projectsList__name--translated');
+          const prevProject = document.querySelector('.projectsList__name--previous');
+          prevProject.classList.add('projectsList__name--previousEnter');
+        }, 1);
 
+        setTimeout(() => {
+          projectName = document.querySelector('.projectsList__name--selected, .projectsList__name--selectedIsLoaded');
+          projectName.classList.add('projectsList__name--selectedEnter');
         }, 700);
+
+        setTimeout(() => {
+          discover = document.querySelector('.projectsList__discover--active');
+          if (discover) {
+            discover = document.querySelector('.projectsList__discover--active');
+            discover.classList.add('projectsList__discover--enter');
+          }
+
+          selectedNumber.classList.remove('projectRightSide__selectedNumber--out');
+          selectedNumber.classList.add('projectRightSide__selectedNumber--enter');
+        }, 1200);
 
       }, 1050);
 
