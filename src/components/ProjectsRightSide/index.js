@@ -4,23 +4,10 @@ import './styles.scss';
 
 import EventManagerMixin from 'mixins/EventManagerMixin';
 
-import {
-  changeProject
-} from 'vuex/projectNumber/actions';
 
 import {
   projectNumber
 } from 'vuex/projectNumber/getters';
-
-import {
-  updateLoaded,
-  updateInteraction
-} from 'vuex/status/actions';
-
-import {
-  loaded,
-  interaction
-} from 'vuex/status/getters';
 
 import ProjectsList from 'components/ProjectsList';
 
@@ -32,14 +19,7 @@ export default Vue.extend({
 
   vuex: {
     getters: {
-      projectNumber: projectNumber,
-      interaction: interaction,
-      loaded: loaded
-    },
-    actions: {
-      changeProject,
-      updateLoaded,
-      updateInteraction
+      projectNumber: projectNumber
     }
   },
 

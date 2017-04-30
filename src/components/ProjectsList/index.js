@@ -14,12 +14,10 @@ import {
 } from 'vuex/projectNumber/getters';
 
 import {
-  updateLoaded,
   updateInteraction
 } from 'vuex/status/actions';
 
 import {
-  loaded,
   interaction
 } from 'vuex/status/getters';
 
@@ -35,12 +33,10 @@ export default Vue.extend({
     getters: {
       projectNumber: projectNumber,
       prevProjectNumber: prevProjectNumber,
-      loaded: loaded,
       interaction: interaction
     },
     actions: {
       changeProject,
-      updateLoaded,
       updateInteraction
     }
   },

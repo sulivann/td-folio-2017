@@ -19,8 +19,7 @@ export default Vue.extend({
   vuex: {
     getters: {
       projectNumber: projectNumber
-    },
-    actions: {}
+    }
   },
 
   emitterEvents: [],
