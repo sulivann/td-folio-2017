@@ -145,6 +145,14 @@ export default Vue.extend({
         void projectCover.offsetWidth;
         projectCover.classList.add('projectsLeftSide__mask');
 
+        setTimeout ( () => {
+
+          const projectName = document.querySelector('.projectsList__name--selected, .projectsList__name--selectedInteracted');
+
+          projectName.classList.add('projectsList__name--translated');
+
+        }, 700);
+
       }, 1050);
 
     },
@@ -191,6 +199,14 @@ export default Vue.extend({
         projectCover.classList.remove('projectsLeftSide__mask--scrolled');
         void projectCover.offsetWidth;
         projectCover.classList.add('projectsLeftSide__mask');
+
+        setTimeout ( () => {
+
+          const projectName = document.querySelector('.projectsList__name--selected, .projectsList__name--selectedInteracted');
+
+          projectName.classList.add('projectsList__name--translated');
+
+        }, 700);
 
       }, 1050);
 

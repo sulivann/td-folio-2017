@@ -117,7 +117,7 @@
     overflow:hidden;
 
     .projectsRightSide__typo {
-        transform:translate(0%, 100%);
+        transform:translate3d(0, 100%, 0);
 
         animation-name:typo-slide-up;
         animation-duration:750ms;

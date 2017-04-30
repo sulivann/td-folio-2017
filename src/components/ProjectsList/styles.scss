@@ -23,13 +23,6 @@
   padding-left:0px;
   color:$blue-ocean;
   font-weight:400;
-
-  animation-name:add-project-padding;
-  animation-timing-function:cubic-bezier(0.93, 0.02, 0.54, 1.01);
-  animation-duration:500ms;
-  animation-fill-mode:forwards;
-  animation-delay:1100ms;
-
   cursor:pointer;
 
   &:after {
@@ -41,12 +34,15 @@
     position:absolute;
     top:50%;
     left:0;
+  }
 
-    animation-name:draw-line-project;
-    animation-timing-function:cubic-bezier(0.93, 0.02, 0.54, 1.01);
-    animation-duration:500ms;
-    animation-fill-mode:forwards;
-    animation-delay:1100ms;
+  &:hover {
+    padding-left:0px;
+    padding-right:34px;
+
+    &:after {
+      left:calc(100% - 14px);
+    }
   }
 }
 
@@ -57,12 +53,7 @@
   padding-left:0px;
   color:$blue-ocean;
   font-weight:400;
-
-  animation-name:add-project-padding;
-  animation-timing-function:cubic-bezier(0.93, 0.02, 0.54, 1.01);
-  animation-duration:500ms;
-  animation-fill-mode:forwards;
-  animation-delay:700ms;
+  cursor:pointer;
 
   &:after {
     content:'';
@@ -73,12 +64,27 @@
     position:absolute;
     top:50%;
     left:0;
+  }
 
-    animation-name:draw-line-project;
-    animation-timing-function:cubic-bezier(0.93, 0.02, 0.54, 1.01);
-    animation-duration:500ms;
-    animation-fill-mode:forwards;
-    animation-delay:700ms;
+  &:hover {
+    padding-left:0px;
+    padding-right:34px;
+
+    &:after {
+      left:calc(100% - 14px);
+    }
+  }
+}
+
+.projectsList__name--translated {
+  padding-left:34px;
+  font-weight:600;
+  color:$black-mine-shaft;
+  transition:all 500ms cubic-bezier(0.93, 0.02, 0.54, 1.01);
+
+  &:after {
+    width:14px;
+    transition:all 500ms cubic-bezier(0.93, 0.02, 0.54, 1.01);
   }
 }
 

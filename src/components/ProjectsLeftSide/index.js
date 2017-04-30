@@ -7,10 +7,6 @@ import EventManagerMixin from 'mixins/EventManagerMixin';
 import projectsData from 'config/projectsData';
 
 import {
-  changeProject
-} from 'vuex/projectNumber/actions';
-
-import {
   projectNumber
 } from 'vuex/projectNumber/getters';
 
@@ -24,9 +20,7 @@ export default Vue.extend({
     getters: {
       projectNumber: projectNumber
     },
-    actions: {
-      changeProject
-    }
+    actions: {}
   },
 
   emitterEvents: [],
@@ -54,6 +48,7 @@ export default Vue.extend({
     },
 
     projectSlug: function () {
+
       return projectsData[this.projectNumber-1].slug;
     }
   },
