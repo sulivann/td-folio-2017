@@ -67,6 +67,10 @@ export default Vue.extend({
     const projectsName = document.querySelectorAll('.projectsList__name');
 
     setTimeout( () => {
+      projectName.classList.add('projectsList__name--fade');
+    }, 1400);
+
+    setTimeout( () => {
       projectName.classList.add('projectsList__name--selectedEnter');
     }, 1600);
 

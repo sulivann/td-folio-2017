@@ -10,6 +10,7 @@
   margin-bottom:0.9375rem;
 }
 
+
 .projectsList__name--selected {
   height:15px;
   overflow:hidden;
@@ -81,13 +82,16 @@
   padding-left:34px;
   font-weight:600;
   color:$black-mine-shaft;
-  opacity:1;
   transition:all 500ms cubic-bezier(0.93, 0.02, 0.54, 1.01);
 
   &:after {
     width:14px;
     transition:all 500ms cubic-bezier(0.93, 0.02, 0.54, 1.01);
   }
+}
+
+.projectsList__name--fade {
+  opacity:1;
 }
 
 .projectsList__name--selectedOut {
