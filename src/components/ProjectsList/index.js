@@ -67,11 +67,16 @@ export default Vue.extend({
   ready() {
     this.updateLoadedStore();
 
-    setTimeout( () => {
-      const projectName = document.querySelector('.projectsList__name--selected');
+    const projectName = document.querySelector('.projectsList__name--selected');
+    const discover = document.querySelector('.projectsList__discover--active');
 
+    setTimeout( () => {
       projectName.classList.add('projectsList__name--enter');
     }, 1100);
+
+    setTimeout( () => {
+      discover.classList.add('projectsList__discover--enter');
+    }, 1600);
   },
 
   methods: {
