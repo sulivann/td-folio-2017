@@ -76,6 +76,7 @@
 }
 
 
+
 .projectsList__name--selectedEnter {
   padding-left:34px;
   font-weight:600;
@@ -100,10 +101,25 @@
   }
 }
 
+.projectsList__name--selectedExit {
+  color:$blue-ocean;
+  padding:0;
+  font-weight:400;
+
+  &:after {
+    width:0px;
+  }
+}
+
 .projectsList__name--previous {
   color:$black-mine-shaft;
   font-weight:400;
   cursor:pointer;
+
+  &:hover {
+    color:$black-mine-shaft;
+    transition:all 750ms ease-out;
+  }
 }
 
 .projectsList__name--previousEnter {
