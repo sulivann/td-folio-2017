@@ -46,36 +46,6 @@
   transform:translate3d(0, 100%, 0);
 }
 
-.projectRightSide__selectedNumber--interacted {
-  font-weight:500;
-  font-size:0.9375rem;
-  color:$gray-mine-shaft;
-  display:block;
-
-  transform:translate3d(0, 100%, 0);
-
-  animation-name:typo-slide-up;
-  animation-duration:650ms;
-  animation-fill-mode:forwards;
-  animation-delay:1200ms;
-}
-
-.projectRightSide__selectedNumber--hidden {
-  font-weight:500;
-  font-size:0.9375rem;
-  color:$gray-mine-shaft;
-  display:block;
-
-  transform:translate3d(0, 0, 0);
-
-  animation-name:typo-slide-down;
-  animation-duration:600ms;
-  animation-fill-mode:forwards;
-}
-
-.projectsRightSide__container {
-}
-
 .projectsRightSide__separator {
   width:100%;
   height:1px;
