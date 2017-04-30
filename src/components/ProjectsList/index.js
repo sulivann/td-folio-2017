@@ -70,7 +70,7 @@ export default Vue.extend({
     setTimeout( () => {
       const projectName = document.querySelector('.projectsList__name--selected');
 
-      projectName.classList.add('projectsList__name--translated');
+      projectName.classList.add('projectsList__name--enter');
     }, 1100);
   },
 

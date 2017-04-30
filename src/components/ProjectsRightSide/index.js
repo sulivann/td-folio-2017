@@ -54,7 +54,22 @@ export default Vue.extend({
     };
   },
 
-  ready() {},
+  ready() {
+
+    const selectedWorks = document.querySelectorAll('.projectsRightSide__typo');
+    const projectNumber = document.querySelector('.projectRightSide__selectedNumber');
+
+    setTimeout(() => {
+      for(const el of selectedWorks) {
+        el.classList.add('projectsRightSide__typo--enter');
+      }
+    }, 600);
+
+    setTimeout(() => {
+      projectNumber.classList.add('projectRightSide__selectedNumber--enter');
+    }, 1600);
+
+  },
 
   methods: {},
 

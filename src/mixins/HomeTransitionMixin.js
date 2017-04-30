@@ -1,7 +1,5 @@
-import { TweenMax, Expo } from 'gsap';
-
 /*
- *  ==== FadeTransitionMixin ====
+ *  ==== Home ====
  */
 
 const HomeTransitionMixin = {
@@ -10,11 +8,15 @@ const HomeTransitionMixin = {
 
     deactivate: function( { next } ) {
 
-      TweenMax.to(this.$el, 0.7, {
-        opacity: 0,
-        onComplete: next,
-        ease: Expo.easeOut
-      });
+      const selectedWorks = document.querySelectorAll('.projectsRightSide__typo');
+
+      for (const el of selectedWorks) {
+        el.classList.add('projectsRightSide__typo--exit');
+      }
+
+      setTimeout(() => {
+        next();
+      }, 20050);
     }
 
   }

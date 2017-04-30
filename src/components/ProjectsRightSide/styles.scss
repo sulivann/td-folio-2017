@@ -34,11 +34,11 @@
   display:block;
 
   transform:translate3d(0, 100%, 0);
+}
 
-  animation-name:typo-slide-up;
-  animation-duration:650ms;
-  animation-fill-mode:forwards;
-  animation-delay:1600ms;
+.projectRightSide__selectedNumber--enter {
+  transition:transform 650ms ease-out;
+  transform:translate3d(0, 0, 0);
 }
 
 .projectRightSide__selectedNumber--interacted {
@@ -117,12 +117,12 @@
     overflow:hidden;
 
     .projectsRightSide__typo {
-        transform:translate3d(0, 100%, 0);
+      transform:translate3d(0, 100%, 0);
+    }
 
-        animation-name:typo-slide-up;
-        animation-duration:750ms;
-        animation-fill-mode:forwards;
-        animation-delay:600ms;
+    .projectsRightSide__typo--enter {
+      transition:transform 750ms ease-out;
+      transform:translate3d(0, 0, 0);
     }
   }
 }
