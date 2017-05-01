@@ -38,6 +38,11 @@ export default Vue.extend({
 
     const selectedWorks = document.querySelectorAll('.projectsRightSide__typo');
     const projectNumber = document.querySelector('.projectRightSide__selectedNumber');
+    const projectsRightSide = document.querySelector('.projectsRightSide');
+
+    setTimeout(() => {
+      projectsRightSide.classList.add('projectsRightSide--enter');
+    }, 500);
 
     setTimeout(() => {
       for(const el of selectedWorks) {

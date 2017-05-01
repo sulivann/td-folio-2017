@@ -20,7 +20,8 @@ import {
 } from 'vuex/projectNumber/getters';
 
 import {
-  updateInteraction
+  updateInteraction,
+  resetInteraction
 } from 'vuex/status/actions';
 
 import projectsData from 'config/projectsData';
@@ -41,7 +42,8 @@ export default Vue.extend({
     },
     actions: {
       changeProject,
-      updateInteraction
+      updateInteraction,
+      resetInteraction
     }
   },
 
@@ -71,7 +73,7 @@ export default Vue.extend({
   },
 
   created() {
-
+    this.resetInteraction;
   },
 
   methods: {

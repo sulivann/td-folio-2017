@@ -1,7 +1,8 @@
 'use strict';
 
 import {
-  UPDATE_INTERACTION
+  UPDATE_INTERACTION,
+  RESET_INTERACTION
 } from '../mutation-types';
 
 const state = {
@@ -11,6 +12,10 @@ const state = {
 const mutations = {
   [ UPDATE_INTERACTION ] () {
     state.interaction = true;
+  },
+
+  [ RESET_INTERACTION ] () {
+    state.interaction = false;
   }
 };
 

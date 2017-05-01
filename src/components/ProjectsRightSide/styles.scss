@@ -1,15 +1,14 @@
 @import '~stylesheets/common/variables';
 
 .projectsRightSide {
-  width:37%;
+  width:0;
   background-color:$white-athens;
   height:100%;
+}
 
-  // animation-name:slide-home-right;
-  // animation-timing-function:ease-out;
-  // animation-duration:1000ms;
-  // animation-fill-mode:forwards;
-  // animation-delay:500ms;
+.projectsRightSide--enter {
+  transition:width 750ms ease-out;
+  width:37%;
 }
 
 .projectsRightSide__wrapper {
