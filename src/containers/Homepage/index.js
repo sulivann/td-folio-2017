@@ -12,7 +12,8 @@ import {
 } from 'config/messages';
 
 import {
-  changeProject
+  changeProject,
+  resetPrevious
 } from 'vuex/projectNumber/actions';
 
 import {
@@ -43,7 +44,8 @@ export default Vue.extend({
     actions: {
       changeProject,
       updateInteraction,
-      resetInteraction
+      resetInteraction,
+      resetPrevious
     }
   },
 
@@ -73,7 +75,8 @@ export default Vue.extend({
   },
 
   created() {
-    this.resetInteraction;
+    this.resetInteraction();
+    this.resetPrevious();
   },
 
   methods: {

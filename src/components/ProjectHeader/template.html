@@ -2,8 +2,14 @@
 
   <nav class="projectHeader__nav">
     <div class="projectHeader__wrapper">
-      <a v-link="{ name: 'about' }">About</a>
-      <a v-link="{ name: 'home' }">Works</a>
+      <div class="projectHeader__links">
+        <a v-link="{ name: 'about' }">
+          <div class="projectHeader__link">About</div>
+        </a>
+        <a v-link="{ name: 'home' }">
+          <div class="projectHeader__link">Works</div>
+        </a>
+      </div>
     </div>
   </nav>
 
@@ -12,8 +18,12 @@
     <div class="projectHeader__presentation">
       <div class="projectHeader__title">
         <div class="projectHeader__titleContainer">
-          <p>{{projectData.name}}</p>
-          <p>{{projectData.type}}</p>
+          <div class="projectHeader__titleMask">
+            <div class="projectHeader__titleTypo">{{projectData.name}}</div>
+          </div>
+          <div class="projectHeader__titleMask">
+            <div class="projectHeader__titleTypo">{{projectData.type}}</div>
+          </div>
         </div>
       </div>
 

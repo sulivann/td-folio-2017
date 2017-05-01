@@ -1,7 +1,8 @@
 'use strict';
 
 import {
-  CHANGE_PROJECT
+  CHANGE_PROJECT,
+  RESET_PREVIOUS
 } from '../mutation-types';
 
 const state = {
@@ -13,6 +14,10 @@ const mutations = {
   [ CHANGE_PROJECT ] (state, n) {
     state.prevProjectNumber = state.projectNumber;
     state.projectNumber = n;
+  },
+
+  [ RESET_PREVIOUS ] () {
+    state.prevProjectNumber = 0;
   }
 };
 
