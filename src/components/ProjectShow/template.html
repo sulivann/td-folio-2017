@@ -2,8 +2,21 @@
 
   <div class="projectShow__element" v-for="(index, element) in projectData.show">
 
-    <img class="projectShow__image--centered" v-bind:src="'./images/'+element.image" v-if="element.type == 'centered'">
-    <img class="projectShow__image" v-bind:src="'./images/'+element.image" v-else>
+    <div class="projectShow__imageContainer--centered" v-if="element.type == 'centered'">
+
+      <img class="projectShow__image" v-bind:src="'./images/'+element.image" v-else>
+
+      <div class="projectShow__mask"></div>
+
+    </div>
+
+    <div class="projectShow__imageContainer" v-else>
+
+      <img class="projectShow__image" v-bind:src="'./images/'+element.image" v-else>
+
+      <div class="projectShow__mask"></div>
+
+    </div>
 
     <div class="projectShow__label" v-if="element.type == 'double-paragraph'">
       <p>{{element.firstLabel}}</p>

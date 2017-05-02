@@ -90,7 +90,7 @@
     .projectHeader__titleTypo--enter {
       &:after {
         width:66px;
-        transition:width 400ms cubic-bezier(0.93, 0.02, 0.54, 1.01);
+        transition:width 550ms cubic-bezier(0.93, 0.02, 0.54, 1.01);
         transition-delay:250ms;
       }
     }
@@ -123,7 +123,7 @@
 }
 
 .projectHeader__descriptionContainer {
-  max-width:450px;
+  max-width:503px;
 }
 
 .projectHeader__details {
@@ -141,7 +141,7 @@
 }
 
 .projectHeader__separator {
-  width:83%;
+  width:100%;
   background-color:$white-stone;
   height:1px;
   opacity:0.19;
@@ -152,4 +152,5 @@
   font-size:0.9375rem;
   line-height:1.406rem;
   font-weight:500;
+  max-width:450px;
 }
