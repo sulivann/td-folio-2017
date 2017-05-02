@@ -90,8 +90,8 @@
     .projectHeader__titleTypo--enter {
       &:after {
         width:66px;
-        transition:width 600ms cubic-bezier(0.93, 0.02, 0.54, 1.01);
-        transition-delay:450ms;
+        transition:width 400ms cubic-bezier(0.93, 0.02, 0.54, 1.01);
+        transition-delay:250ms;
       }
     }
   }

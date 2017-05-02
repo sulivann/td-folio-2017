@@ -57,13 +57,10 @@ export default Vue.extend({
 
     setTimeout(() => {
       presentation.classList.add('projectHeader__description--enter');
-    }, 1250);
-
-    setTimeout(() => {
       for (const el of links) {
         el.classList.add('projectHeader__link--enter');
       }
-    }, 1600);
+    }, 1250);
   },
 
   methods: {},

@@ -31,7 +31,7 @@ const HomeTransitionMixin = {
 
       tl.add(() => {
         projectName.classList.add('projectsList__name--selectedExit');
-      }, '-=0.1');
+      }, '-=0.3');
 
       tl.add(() => {
         TweenMax.set(about, {css:{transition:'none'}});
@@ -50,12 +50,12 @@ const HomeTransitionMixin = {
           y:'100%',
           ease: Expo.easeOut
         });
-      }, '+=0.5');
+        TweenMax.to(projectsList, 0.4, {
+          opacity:0,
+          ease: Expo.easeOut
+        });
+      }, '+=0.2');
 
-      tl.to(projectsList, 0.4, {
-        opacity:0,
-        ease: Expo.easeOut
-      });
 
       tl.add(() => {
 
@@ -77,9 +77,9 @@ const HomeTransitionMixin = {
 
         TweenMax.to(projectRightSide, 0.65, {
           height:0
-        });
+        }, );
 
-      }, '+=0.25');
+      }, '+=0.2');
 
       tl.set({}, {}, 3);
 
