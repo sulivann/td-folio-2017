@@ -34,15 +34,19 @@ const HomeTransitionMixin = {
       }, '-=0.1');
 
       tl.add(() => {
-        TweenMax.to(about, 0.2, {
+        TweenMax.set(about, {css:{transition:'none'}});
+        TweenMax.set(discover, {css:{transition:'none'}});
+        TweenMax.set(projectNumber, {css:{transition:'none'}});
+
+        TweenMax.to(about, 0.4, {
           y:'100%',
           ease: Expo.easeOut
         });
-        TweenMax.to(discover, 0.2, {
+        TweenMax.to(discover, 0.4, {
           y:'100%',
           ease: Expo.easeOut
         });
-        TweenMax.to(projectNumber, 0.2, {
+        TweenMax.to(projectNumber, 0.4, {
           y:'100%',
           ease: Expo.easeOut
         });
