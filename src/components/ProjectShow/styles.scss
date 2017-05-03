@@ -15,6 +15,15 @@
   margin-bottom:70px;
 }
 
+.projectShow__element:first-child {
+  opacity:0;
+}
+
+.projectShow__element--enter:first-child {
+  opacity:1;
+  transition:opacity 750ms ease-out;
+}
+
 .projectShow__imageContainer {
   width:100%;
   overflow:hidden;
