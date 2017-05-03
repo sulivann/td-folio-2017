@@ -81,7 +81,7 @@ const HomeTransitionMixin = {
 
       }, '+=0.2');
 
-      tl.set({}, {}, 3);
+      tl.set({}, {}, 1.5);
 
     }
 
