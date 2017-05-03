@@ -105,7 +105,8 @@ export default Vue.extend({
       let images = document.querySelectorAll('.projectShow__imageContainer, .projectShow__imageContainer--centered');
 
       for (let elm of images) {
-        if (elm.getBoundingClientRect().top < 800 && !elm.classList.contains('projectShow__imageContainer--active')) {
+
+        if ((elm.getBoundingClientRect().top - window.innerHeight) < 20 && !elm.classList.contains('projectShow__imageContainer--active')) {
           elm.classList.add('projectShow__imageContainer--active');
         }
       }
