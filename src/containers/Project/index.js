@@ -10,10 +10,6 @@ import EventManagerMixin from 'mixins/EventManagerMixin';
 import FadeTransitionMixin from 'mixins/FadeTransitionMixin';
 
 import {
-  WINDOW_RESIZE
-} from 'config/messages';
-
-import {
   changeProject
 } from 'vuex/projectNumber/actions';
 
@@ -41,11 +37,6 @@ export default Vue.extend({
       changeProject
     }
   },
-
-  emitterEvents: [{
-    message: WINDOW_RESIZE,
-    method: 'onWindowResize'
-  }],
 
   domEvents: [
     {
@@ -93,16 +84,10 @@ export default Vue.extend({
       this.handleBackToHome = throttle(this.broadcastBackToHome, 1400, { trailing: false, leading: true });
     },
 
-    onWindowResize( {width, height} ) {
-      /*eslint-disable */
-      console.log( `Window resize from application with debounce -> width: ${width}px || height: ${ height }` );
-      /*eslint-enable */
-    },
-
     broadcastScrollDown() {
       let images = document.querySelectorAll('.projectShow__imageContainer, .projectShow__imageContainer--centered');
       for (let elm of images) {
-        if ((elm.getBoundingClientRect().top - window.innerHeight) < 100 && !elm.classList.contains('projectShow__imageContainer--active')) {
+        if ((elm.getBoundingClientRect().top - window.innerHeight) < 130 && !elm.classList.contains('projectShow__imageContainer--active')) {
           elm.classList.add('projectShow__imageContainer--active');
         }
       }
@@ -137,9 +122,9 @@ export default Vue.extend({
         this.handleScrollDown();
       });
 
-      let currentY = 0, ease = 0.12;
+      let currentY = 0, ease = 0.148;
 
-      let run = function() {
+      let run = () => {
         requestAnimationFrame(run);
         currentY += (targetY - currentY) * ease;
         let t = 'translateY(' + currentY + 'px) translateZ(0)';
