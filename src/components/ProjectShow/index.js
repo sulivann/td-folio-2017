@@ -44,6 +44,7 @@ export default Vue.extend({
   },
 
   ready() {
+
     setTimeout( () => {
       const firstElement = document.querySelector('.projectShow__element');
 
