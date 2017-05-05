@@ -1,4 +1,4 @@
-<div class="projectsLeftSide">
+<div class="projectsLeftSide" v-if="!fromCase">
 
   <nav class="projectLeftSide__nav">
     <ul class="projectLeftSide__wrapper">
@@ -12,6 +12,24 @@
     <div class="projectsLeftSide__cover" v-bind:style="projectCover" v-link="{ name: 'project', params: { projectName: projectSlug }}" v-if="isReleased"></div>
     <div class="projectsLeftSide__cover" v-bind:style="projectCover" v-else></div>
     <div class="projectsLeftSide__mask"></div>
+  </div>
+
+</div>
+
+<div class="projectsLeftSide" v-else>
+
+  <nav class="projectLeftSide__nav">
+    <ul class="projectLeftSide__wrapper">
+      <li>
+        <a class="projectsLeftSide__about projectsLeftSide__about--enter" v-link='{name: "about"}'>About</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="projectsLeftSide__container">
+    <div class="projectsLeftSide__cover projectsLeftSide__cover--enter" v-bind:style="projectCover" v-link="{ name: 'project', params: { projectName: projectSlug }}" v-if="isReleased"></div>
+    <div class="projectsLeftSide__cover projectsLeftSide__cover--enter" v-bind:style="projectCover" v-else></div>
+    <div class="projectsLeftSide__mask projectsLeftSide__mask--enter"></div>
   </div>
 
 </div>

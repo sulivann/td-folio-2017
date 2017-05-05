@@ -1,9 +1,9 @@
-<div class="projectsRightSide">
+<div class="projectsRightSide" v-if="!fromCase">
 
   <div class="projectsRightSide__wrapper">
 
     <div class="projectsRightSide__selectedNumberMask">
-      <div class="projectRightSide__selectedNumber" v-else>0{{projectNumber}}</div>
+      <div class="projectRightSide__selectedNumber">0{{projectNumber}}</div>
     </div>
 
     <div class="projectsRightSide__container">
@@ -19,6 +19,36 @@
         <div class="projectsRightSide__line">
           <div class="projectsRightSide__mask">
             <h2 class="projectsRightSide__typo">works</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="projectsRightSide projectsRightSide--enter" v-else>
+
+  <div class="projectsRightSide__wrapper">
+
+    <div class="projectsRightSide__selectedNumberMask">
+      <div class="projectRightSide__selectedNumber projectRightSide__selectedNumber--enter">0{{projectNumber}}</div>
+    </div>
+
+    <div class="projectsRightSide__container">
+      <projects-list></projects-list>
+      <div class="projectsRightSide__separator"></div>
+      <div class="projectsRightSide__label">
+        <div class="projectsRightSide__line">
+          <div class="projectsRightSide__mask">
+            <h2 class="projectsRightSide__typo projectsRightSide__typo--enter">Selected</h2>
+          </div>
+
+        </div>
+        <div class="projectsRightSide__line">
+          <div class="projectsRightSide__mask">
+            <h2 class="projectsRightSide__typo projectsRightSide__typo--enter">works</h2>
           </div>
         </div>
       </div>

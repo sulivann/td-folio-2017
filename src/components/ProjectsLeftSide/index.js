@@ -10,6 +10,10 @@ import {
   projectNumber
 } from 'vuex/projectNumber/getters';
 
+import {
+  fromCase
+} from 'vuex/status/getters';
+
 export default Vue.extend({
 
   mixins: [ EventManagerMixin ],
@@ -18,7 +22,8 @@ export default Vue.extend({
 
   vuex: {
     getters: {
-      projectNumber: projectNumber
+      projectNumber: projectNumber,
+      fromCase: fromCase
     }
   },
 
@@ -53,19 +58,21 @@ export default Vue.extend({
   },
 
   ready() {
-    const cover = document.querySelector('.projectsLeftSide__cover');
-    const coverMask = document.querySelector('.projectsLeftSide__mask');
-    const about = document.querySelector('.projectsLeftSide__about');
 
-    setTimeout(() => {
-      cover.classList.add('projectsLeftSide__cover--enter');
-      coverMask.classList.add('projectsLeftSide__mask--enter');
-    }, 500);
+    if(!this.fromCase) {
+      const cover = document.querySelector('.projectsLeftSide__cover');
+      const coverMask = document.querySelector('.projectsLeftSide__mask');
+      const about = document.querySelector('.projectsLeftSide__about');
 
-    setTimeout(() => {
-      about.classList.add('projectsLeftSide__about--enter');
-    }, 2100);
+      setTimeout(() => {
+        cover.classList.add('projectsLeftSide__cover--enter');
+        coverMask.classList.add('projectsLeftSide__mask--enter');
+      }, 500);
 
+      setTimeout(() => {
+        about.classList.add('projectsLeftSide__about--enter');
+      }, 2100);
+    }
   },
 
   methods: {},

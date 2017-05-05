@@ -1,0 +1,69 @@
+<div class="projects preview">
+  <div class="projectsLeftSide">
+
+    <nav class="projectLeftSide__nav">
+      <ul class="projectLeftSide__wrapper">
+        <li>
+          <a class="projectsLeftSide__about projectsLeftSide__about--enter" v-link='{name: "about"}'>About</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="projectsLeftSide__container">
+      <div class="projectsLeftSide__cover projectsLeftSide__cover--enter" v-bind:style="projectCover" v-link="{ name: 'project', params: { projectName: projectSlug }}" v-if="isReleased"></div>
+      <div class="projectsLeftSide__cover projectsLeftSide__cover--enter" v-bind:style="projectCover" v-else></div>
+      <div class="projectsLeftSide__mask projectsLeftSide__mask--enter"></div>
+    </div>
+
+  </div>
+
+  <div class="projectsRightSide projectsRightSide--enter">
+
+    <div class="projectsRightSide__wrapper">
+
+      <div class="projectsRightSide__selectedNumberMask">
+        <div class="projectRightSide__selectedNumber projectRightSide__selectedNumber--enter">0{{nextProject}}</div>
+      </div>
+
+      <div class="projectsRightSide__container">
+        <ul class="projectsList">
+
+          <li v-for="(index, project) in projectsData">
+            <div class="projectsList__container" v-if='index == (nextProject - 1)'>
+              <div class="projectsList__name--selected projectsList__name--fade projectsList__name--selectedEnter">
+                {{project.name}}
+              </div>
+              <div class="projectsList__discover--active projectsList__discover--enter" v-if='project.released'>
+                <span>discover</span>
+              </div>
+            </div>
+
+            <div class="projectsList__container" v-else>
+              <div class="projectsList__name projectsList__name--enter">
+                {{project.name}}
+              </div>
+            </div>
+
+          </li>
+
+        </ul>
+        <div class="projectsRightSide__separator"></div>
+        <div class="projectsRightSide__label">
+          <div class="projectsRightSide__line">
+            <div class="projectsRightSide__mask">
+              <h2 class="projectsRightSide__typo projectsRightSide__typo--enter">Selected</h2>
+            </div>
+
+          </div>
+          <div class="projectsRightSide__line">
+            <div class="projectsRightSide__mask">
+              <h2 class="projectsRightSide__typo projectsRightSide__typo--enter">works</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

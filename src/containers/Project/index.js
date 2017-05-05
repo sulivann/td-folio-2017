@@ -7,7 +7,6 @@ import throttle from 'lodash.throttle';
 import VirtualScroll  from 'virtual-scroll';
 
 import EventManagerMixin from 'mixins/EventManagerMixin';
-import FadeTransitionMixin from 'mixins/FadeTransitionMixin';
 
 import {
   changeProject
@@ -17,15 +16,19 @@ import {
   projectNumber
 } from 'vuex/projectNumber/getters';
 
+import {
+  updateFromCase
+} from 'vuex/status/actions';
+
 import projectsData from 'config/projectsData';
 
 import ProjectHeader from 'components/ProjectHeader';
-
 import ProjectShow from 'components/ProjectShow';
+import Preview from 'components/Preview';
 
 export default Vue.extend({
 
-  mixins: [ EventManagerMixin, FadeTransitionMixin ],
+  mixins: [ EventManagerMixin ],
 
   template: require( './template.html' ),
 
@@ -34,22 +37,10 @@ export default Vue.extend({
       projectNumber: projectNumber
     },
     actions: {
-      changeProject
+      changeProject,
+      updateFromCase
     }
   },
-
-  domEvents: [
-    {
-      target: window,
-      event: 'mousewheel',
-      method: 'handleScrollDown'
-    },
-    {
-      target: window,
-      event: 'DOMMouseScroll',
-      method: 'handleScrollDown'
-    }
-  ],
 
   data() {
     for (const data of projectsData) {
@@ -60,6 +51,8 @@ export default Vue.extend({
     }
 
     return {
+      request: '',
+      scroll: new VirtualScroll(),
       projectData: this.projectData,
       _hidden: null
     };
@@ -77,11 +70,16 @@ export default Vue.extend({
     });
   },
 
+  beforeDestroy() {
+    this.scroll.destroy();
+    window.cancelAnimationFrame(this.request);
+  },
+
   methods: {
 
     bind() {
       this.handleScrollDown = throttle(this.broadcastScrollDown, 200, { trailing: false, leading: true });
-      this.handleBackToHome = throttle(this.broadcastBackToHome, 1400, { trailing: false, leading: true });
+      this.handleBackToHome = throttle(this.broadcastBackToHome, 200, { trailing: false, leading: true });
     },
 
     broadcastScrollDown() {
@@ -94,38 +92,41 @@ export default Vue.extend({
     },
 
     broadcastBackToHome() {
-      let end = document.querySelector('.project__end');
+      const projectEnd = document.querySelector('.preview');
+      const projectShow = document.querySelector('.projectShow');
 
-      if(end.getBoundingClientRect().top < 800) {
+      if ((projectEnd.getBoundingClientRect().top - window.innerHeight) < 0) {
+        let scrollProgress = (Math.abs(projectEnd.getBoundingClientRect().top - window.innerHeight)/projectEnd.getBoundingClientRect().height).toFixed(2);
 
-        if (this.projectNumber >= projectsData.length) {
-          this.changeProject(1);
+        if(scrollProgress >= 0.98) {
+          this.updateFromCase();
+          this.changeProject(this.returnNextProject());
+          this.$router.go('/');
         }
-        else {
-          this.changeProject(this.projectNumber+1);
-        }
 
-        this.$router.go('/');
+        projectShow.style.opacity = 1-scrollProgress;
+        projectEnd.style.opacity = scrollProgress;
+
       }
     },
 
     smoothScroll() {
       let section = document.querySelector('.project');
       let targetY = 0;
-      let scroll = new VirtualScroll();
 
-      scroll.on((e) => {
+      this.scroll.on((e) => {
         targetY += e.deltaY;
         targetY = Math.max( (section.scrollHeight - window.innerHeight) * -1, targetY);
         targetY = Math.min(0, targetY);
 
         this.handleScrollDown();
+        this.handleBackToHome();
       });
 
-      let currentY = 0, ease = 0.148;
+      let currentY = 0, ease = 0.158;
 
       let run = () => {
-        requestAnimationFrame(run);
+        this.request = requestAnimationFrame(run);
         currentY += (targetY - currentY) * ease;
         let t = 'translateY(' + currentY + 'px) translateZ(0)';
         let s = section.style;
@@ -136,6 +137,15 @@ export default Vue.extend({
       };
 
       run();
+    },
+
+    returnNextProject() {
+      if (this.projectNumber >= projectsData.length) {
+        return 1;
+      }
+      else {
+        return this.projectNumber+1;
+      }
     }
 
 
@@ -143,6 +153,7 @@ export default Vue.extend({
 
   components: {
     'project-header': ProjectHeader,
-    'project-show': ProjectShow
+    'project-show': ProjectShow,
+    'preview': Preview
   }
 });

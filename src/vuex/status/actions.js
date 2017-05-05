@@ -9,3 +9,11 @@ export const updateInteraction = ({ dispatch }, n) => {
 export const resetInteraction = ({ dispatch }, n) => {
   dispatch(types.RESET_INTERACTION, n);
 };
+
+export const updateFromCase = ({ dispatch }, n) => {
+  dispatch(types.UPDATE_FROMCASE, n);
+};
+
+export const resetFromCase = ({ dispatch }, n) => {
+  dispatch(types.RESET_FROMCASE, n);
+};

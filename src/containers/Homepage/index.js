@@ -8,10 +8,6 @@ import EventManagerMixin from 'mixins/EventManagerMixin';
 import HomeTransitionMixin from 'mixins/HomeTransitionMixin';
 
 import {
-  WINDOW_RESIZE
-} from 'config/messages';
-
-import {
   changeProject,
   resetPrevious
 } from 'vuex/projectNumber/actions';
@@ -22,7 +18,8 @@ import {
 
 import {
   updateInteraction,
-  resetInteraction
+  resetInteraction,
+  resetFromCase
 } from 'vuex/status/actions';
 
 import projectsData from 'config/projectsData';
@@ -45,31 +42,15 @@ export default Vue.extend({
       changeProject,
       updateInteraction,
       resetInteraction,
-      resetPrevious
+      resetPrevious,
+      resetFromCase
     }
   },
-
-  emitterEvents: [{
-    message: WINDOW_RESIZE,
-    method: 'onWindowResize'
-  }],
-
-  domEvents: [
-    {
-      target: window,
-      event: 'wheel',
-      method: 'handleScrollDown'
-    },
-    {
-      target: window,
-      event: 'DOMMouseScroll',
-      method: 'handleScrollDown'
-    }
-  ],
 
   data() {
 
     return {
+      timeout: '',
       _hidden: null
     };
   },
@@ -77,6 +58,18 @@ export default Vue.extend({
   created() {
     this.resetInteraction();
     this.resetPrevious();
+
+    this.timeout = setTimeout(() => {
+      this.bindListener();
+    }, 3000);
+  },
+
+  beforeDestroy() {
+    document.removeEventListener('DOMMouseScroll', this.handleScrollDown);
+    document.removeEventListener('mousewheel', this.handleScrollDown);
+    document.removeEventListener('wheel', this.handleScrollDown);
+    clearTimeout(this.timeout);
+    this.resetFromCase();
   },
 
   methods: {
@@ -85,10 +78,13 @@ export default Vue.extend({
       this.handleScrollDown = throttle(this.broadcastScrollDown, 2400, { trailing: false, leading: true });
     },
 
-    onWindowResize( {width, height} ) {
-      /*eslint-disable */
-      console.log( `Window resize from application with debounce -> width: ${width}px || height: ${ height }` );
-      /*eslint-enable */
+    bindListener() {
+      if (document.addEventListener) {
+        document.addEventListener('DOMMouseScroll', this.handleScrollDown, false);
+        document.addEventListener('mousewheel', this.handleScrollDown, false);
+      } else {
+        document.addEventListener('wheel', this.handleScrollDown);
+      }
     },
 
     broadcastScrollDown(e) {
