@@ -53,6 +53,7 @@ export default Vue.extend({
     return {
       request: '',
       scroll: new VirtualScroll(),
+      scrollEasing: 0,
       projectData: this.projectData,
       _hidden: null
     };
@@ -93,18 +94,19 @@ export default Vue.extend({
 
     broadcastBackToHome() {
       const projectEnd = document.querySelector('.preview');
-      const projectShow = document.querySelector('.projectShow');
+      //const projectShow = document.querySelector('.projectShow');
+      /*eslint-disable*/
 
-      if ((projectEnd.getBoundingClientRect().top - window.innerHeight) < 0) {
-        let scrollProgress = (Math.abs(projectEnd.getBoundingClientRect().top - window.innerHeight)/projectEnd.getBoundingClientRect().height).toFixed(2);
+      if ((projectEnd.getBoundingClientRect().top - window.innerHeight) < -172) {
+        let scrollProgress = (Math.abs(projectEnd.getBoundingClientRect().top - window.innerHeight)/(projectEnd.getBoundingClientRect().height-172)).toFixed(2);
 
-        if(scrollProgress >= 0.98) {
+        if(scrollProgress >= 1) {
           this.updateFromCase();
           this.changeProject(this.returnNextProject());
           this.$router.go('/');
         }
 
-        projectShow.style.opacity = 1-scrollProgress;
+        //projectShow.style.opacity = 1-scrollProgress;
         projectEnd.style.opacity = scrollProgress;
 
       }
@@ -123,11 +125,12 @@ export default Vue.extend({
         this.handleBackToHome();
       });
 
-      let currentY = 0, ease = 0.158;
+      let currentY = 0;
+      this.scrollEasing = 0.238;
 
       let run = () => {
         this.request = requestAnimationFrame(run);
-        currentY += (targetY - currentY) * ease;
+        currentY += (targetY - currentY) * this.scrollEasing;
         let t = 'translateY(' + currentY + 'px) translateZ(0)';
         let s = section.style;
         s["transform"] = t;

@@ -11,7 +11,7 @@
 
     <div class="projectsLeftSide__container">
       <div class="projectsLeftSide__cover projectsLeftSide__cover--enter" v-bind:style="projectCover" v-link="{ name: 'project', params: { projectName: projectSlug }}" v-if="isReleased"></div>
-      <div class="projectsLeftSide__cover projectsLeftSide__cover--enter" v-bind:style="projectCover" v-else></div>
+      <div class="projectsLeftSide__cover projectsLeftSide__cover--enter not-released" v-bind:style="projectCover" v-else></div>
       <div class="projectsLeftSide__mask projectsLeftSide__mask--enter"></div>
     </div>
 

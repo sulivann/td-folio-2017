@@ -38,6 +38,10 @@ export default Vue.extend({
       /*eslint-disable */
       console.log( `Window resize from application with debounce -> width: ${width}px || height: ${ height }` );
       /*eslint-enable */
+    },
+
+    goBack() {
+      window.history.back();
     }
 
   },
