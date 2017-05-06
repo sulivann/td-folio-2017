@@ -43,14 +43,7 @@ export default Vue.extend({
   computed: {
   },
 
-  ready() {
-
-    setTimeout( () => {
-      const firstElement = document.querySelector('.projectShow__element');
-
-      firstElement.classList.add('projectShow__element--enter');
-    }, 1250);
-  },
+  ready() {},
 
   methods: {},
 

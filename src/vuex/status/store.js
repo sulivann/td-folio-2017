@@ -4,12 +4,14 @@ import {
   UPDATE_INTERACTION,
   RESET_INTERACTION,
   UPDATE_FROMCASE,
-  RESET_FROMCASE
+  RESET_FROMCASE,
+  UPDATE_ASSETS
 } from '../mutation-types';
 
 const state = {
   interaction: false,
-  fromCase: false
+  fromCase: false,
+  assets: false
 };
 
 const mutations = {
@@ -24,7 +26,11 @@ const mutations = {
   },
   [ RESET_FROMCASE ] () {
     state.fromCase = false;
+  },
+  [ UPDATE_ASSETS ] () {
+    state.assets = true;
   }
+
 
 };
 

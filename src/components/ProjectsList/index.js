@@ -64,29 +64,29 @@ export default Vue.extend({
 
   ready() {
 
-    if(!this.fromCase) {
-      const projectName = document.querySelector('.projectsList__name--selected');
-      const discover = document.querySelector('.projectsList__discover--active');
-      const projectsName = document.querySelectorAll('.projectsList__name');
-
-      setTimeout( () => {
-        projectName.classList.add('projectsList__name--fade');
-      }, 1400);
-
-      setTimeout( () => {
-        projectName.classList.add('projectsList__name--selectedEnter');
-      }, 1600);
-
-      setTimeout( () => {
-        discover.classList.add('projectsList__discover--enter');
-      }, 2100);
-
-      setTimeout( () => {
-        for(const el of projectsName) {
-          el.classList.add('projectsList__name--enter');
-        }
-      }, 2500);
-    }
+    // if(!this.fromCase) {
+    //   const projectName = document.querySelector('.projectsList__name--selected');
+    //   const discover = document.querySelector('.projectsList__discover--active');
+    //   const projectsName = document.querySelectorAll('.projectsList__name');
+    //
+    //   setTimeout( () => {
+    //     projectName.classList.add('projectsList__name--fade');
+    //   }, 1400);
+    //
+    //   setTimeout( () => {
+    //     projectName.classList.add('projectsList__name--selectedEnter');
+    //   }, 1600);
+    //
+    //   setTimeout( () => {
+    //     discover.classList.add('projectsList__discover--enter');
+    //   }, 2100);
+    //
+    //   setTimeout( () => {
+    //     for(const el of projectsName) {
+    //       el.classList.add('projectsList__name--enter');
+    //     }
+    //   }, 2500);
+    // }
   },
 
   methods: {

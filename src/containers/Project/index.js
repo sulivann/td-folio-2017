@@ -4,9 +4,11 @@ import './styles.scss';
 
 import throttle from 'lodash.throttle';
 
-import VirtualScroll  from 'virtual-scroll';
+import VirtualScroll from 'virtual-scroll';
+import { TimelineLite, TweenMax } from 'gsap';
 
 import EventManagerMixin from 'mixins/EventManagerMixin';
+import loaderMixin from 'vue-loader-mixin';
 
 import {
   changeProject
@@ -17,28 +19,41 @@ import {
 } from 'vuex/projectNumber/getters';
 
 import {
-  updateFromCase
+  updateFromCase,
+  updateAssets
 } from 'vuex/status/actions';
+
+import {
+  assets
+} from 'vuex/status/getters';
 
 import projectsData from 'config/projectsData';
 
+import LogoLoader from 'components/LogoLoader';
 import ProjectHeader from 'components/ProjectHeader';
 import ProjectShow from 'components/ProjectShow';
 import Preview from 'components/Preview';
 
 export default Vue.extend({
 
-  mixins: [ EventManagerMixin ],
+  mixins: [ EventManagerMixin, loaderMixin ],
+
+  events: {
+    'load:progress': 'onLoadProgress',
+    'load:complete': 'onLoadComplete'
+  },
 
   template: require( './template.html' ),
 
   vuex: {
     getters: {
-      projectNumber: projectNumber
+      projectNumber: projectNumber,
+      assets: assets
     },
     actions: {
       changeProject,
-      updateFromCase
+      updateFromCase,
+      updateAssets
     }
   },
 
@@ -55,20 +70,18 @@ export default Vue.extend({
       scroll: new VirtualScroll(),
       scrollEasing: 0,
       projectData: this.projectData,
+      timeline: new TimelineLite(),
       _hidden: null
     };
   },
 
   created() {
-    setTimeout( () => {
-      this.broadcastScrollDown();
-      this.smoothScroll();
+    this.$options.manifest = [];
 
-    }, 1050);
+    for(const asset of this.projectData.show) {
+      this.$options.manifest.push('./images/' + asset.image);
+    }
 
-    document.addEventListener('touchmove', function(e) {
-      e.preventDefault();
-    });
   },
 
   beforeDestroy() {
@@ -76,7 +89,60 @@ export default Vue.extend({
     window.cancelAnimationFrame(this.request);
   },
 
+  ready() {
+    if(!this.assets) {
+      this.load();
+    }
+    else {
+      this.initEvents();
+    }
+  },
+
   methods: {
+
+    initEvents() {
+
+      /* project show */
+      setTimeout( () => {
+        const firstElement = document.querySelector('.projectShow__element');
+
+        firstElement.classList.add('projectShow__element--enter');
+      }, 1950);
+
+      /* project header */
+      const title = document.querySelectorAll('.projectHeader__titleTypo');
+      const presentation = document.querySelector('.projectHeader__description');
+      const links = document.querySelectorAll('.projectHeader__link');
+
+      setTimeout(() => {
+        for (const el of title) {
+          el.classList.add('projectHeader__titleTypo--enter');
+        }
+      }, 1200);
+
+      setTimeout(() => {
+        presentation.classList.add('projectHeader__description--enter');
+        for (const el of links) {
+          el.classList.add('projectHeader__link--enter');
+        }
+      }, 1950);
+
+      /* project */
+      setTimeout( () => {
+        const project = document.querySelector('.project');
+        project.classList.add('project--enter');
+      }, 500);
+
+      setTimeout( () => {
+        this.broadcastScrollDown();
+        this.smoothScroll();
+
+      }, 1750);
+
+      document.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+      });
+    },
 
     bind() {
       this.handleScrollDown = throttle(this.broadcastScrollDown, 200, { trailing: false, leading: true });
@@ -95,10 +161,9 @@ export default Vue.extend({
     broadcastBackToHome() {
       const projectEnd = document.querySelector('.preview');
       //const projectShow = document.querySelector('.projectShow');
-      /*eslint-disable*/
 
       if ((projectEnd.getBoundingClientRect().top - window.innerHeight) < -172) {
-        let scrollProgress = (Math.abs(projectEnd.getBoundingClientRect().top - window.innerHeight)/(projectEnd.getBoundingClientRect().height-172)).toFixed(2);
+        let scrollProgress = (Math.abs(projectEnd.getBoundingClientRect().top - window.innerHeight)/(projectEnd.getBoundingClientRect().height)).toFixed(2);
 
         if(scrollProgress >= 1) {
           this.updateFromCase();
@@ -149,6 +214,43 @@ export default Vue.extend({
       else {
         return this.projectNumber+1;
       }
+    },
+
+    onLoadProgress: function(event) {
+      this.progress = event.progress*0.01;
+      const loaderLogo = document.querySelector('.logoLoader__logo');
+
+      this.timeline.to(loaderLogo, 0.9, {
+        opacity: this.progress
+      });
+
+      this.timeline.to(loaderLogo, 0.9, {
+        opacity: 0.1
+      });
+    },
+
+    onLoadComplete: function() {
+      const loaderLogo = document.querySelector('.logoLoader__logo');
+      const logoLoader = document.querySelector('.logoLoader');
+
+      this.timeline.progress(1, false);
+
+      this.timeline.to(loaderLogo, 0.9, {
+        opacity: 1
+      });
+
+
+      this.timeline.add(
+        TweenMax.to(logoLoader, 0.7, {
+          opacity:0,
+          onComplete:this.loadProject
+        }
+      ), '+=0.5');
+    },
+
+    loadProject() {
+      this.updateAssets();
+      this.initEvents();
     }
 
 
@@ -157,6 +259,7 @@ export default Vue.extend({
   components: {
     'project-header': ProjectHeader,
     'project-show': ProjectShow,
-    'preview': Preview
+    'preview': Preview,
+    'logo-loader': LogoLoader
   }
 });

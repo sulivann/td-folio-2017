@@ -17,3 +17,7 @@ export const updateFromCase = ({ dispatch }, n) => {
 export const resetFromCase = ({ dispatch }, n) => {
   dispatch(types.RESET_FROMCASE, n);
 };
+
+export const updateAssets = ({ dispatch }, n) => {
+  dispatch(types.UPDATE_ASSETS, n);
+};

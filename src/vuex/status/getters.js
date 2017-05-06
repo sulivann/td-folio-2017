@@ -7,3 +7,7 @@ export const interaction = (state) => {
 export const fromCase = (state) => {
   return state.statusStore.fromCase;
 };
+
+export const assets = (state) => {
+  return state.statusStore.assets;
+};

@@ -41,25 +41,25 @@ export default Vue.extend({
 
   ready() {
 
-    if(!this.fromCase) {
-      const selectedWorks = document.querySelectorAll('.projectsRightSide__typo');
-      const projectNumber = document.querySelector('.projectRightSide__selectedNumber');
-      const projectsRightSide = document.querySelector('.projectsRightSide');
-
-      setTimeout(() => {
-        projectsRightSide.classList.add('projectsRightSide--enter');
-      }, 500);
-
-      setTimeout(() => {
-        for(const el of selectedWorks) {
-          el.classList.add('projectsRightSide__typo--enter');
-        }
-      }, 1100);
-
-      setTimeout(() => {
-        projectNumber.classList.add('projectRightSide__selectedNumber--enter');
-      }, 2100);
-    }
+    // if(!this.fromCase) {
+    //   const selectedWorks = document.querySelectorAll('.projectsRightSide__typo');
+    //   const projectNumber = document.querySelector('.projectRightSide__selectedNumber');
+    //   const projectsRightSide = document.querySelector('.projectsRightSide');
+    //
+    //   setTimeout(() => {
+    //     projectsRightSide.classList.add('projectsRightSide--enter');
+    //   }, 500);
+    //
+    //   setTimeout(() => {
+    //     for(const el of selectedWorks) {
+    //       el.classList.add('projectsRightSide__typo--enter');
+    //     }
+    //   }, 1100);
+    //
+    //   setTimeout(() => {
+    //     projectNumber.classList.add('projectRightSide__selectedNumber--enter');
+    //   }, 2100);
+    // }
   },
 
   methods: {},

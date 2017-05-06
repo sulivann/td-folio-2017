@@ -1,5 +1,5 @@
 <div class="homepage" v-bind:class="{ 'homepage--scrolled' : scrolled }">
-  <!-- <logo-loader></logo-loader> -->
+  <logo-loader v-if='!assets'></logo-loader>
   <div class="projects">
 
     <projects-left-side></projects-left-side>

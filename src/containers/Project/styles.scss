@@ -3,6 +3,12 @@
 
 .project {
   background-color:$white-athens;
+  opacity:0;
+}
+
+.project--enter {
+  opacity:1;
+  transition:opacity 700ms ease-out;
 }
 
 .project__end {

@@ -59,20 +59,20 @@ export default Vue.extend({
 
   ready() {
 
-    if(!this.fromCase) {
-      const cover = document.querySelector('.projectsLeftSide__cover');
-      const coverMask = document.querySelector('.projectsLeftSide__mask');
-      const about = document.querySelector('.projectsLeftSide__about');
-
-      setTimeout(() => {
-        cover.classList.add('projectsLeftSide__cover--enter');
-        coverMask.classList.add('projectsLeftSide__mask--enter');
-      }, 500);
-
-      setTimeout(() => {
-        about.classList.add('projectsLeftSide__about--enter');
-      }, 2100);
-    }
+    // if(!this.fromCase) {
+    //   const cover = document.querySelector('.projectsLeftSide__cover');
+    //   const coverMask = document.querySelector('.projectsLeftSide__mask');
+    //   const about = document.querySelector('.projectsLeftSide__about');
+    //
+    //   setTimeout(() => {
+    //     cover.classList.add('projectsLeftSide__cover--enter');
+    //     coverMask.classList.add('projectsLeftSide__mask--enter');
+    //   }, 500);
+    //
+    //   setTimeout(() => {
+    //     about.classList.add('projectsLeftSide__about--enter');
+    //   }, 2100);
+    // }
   },
 
   methods: {},
