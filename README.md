@@ -3,11 +3,11 @@
 #### TO-DO
 - [ ] Add a real README
 - [X] Improve triggerEvents methods
-- [ ] Add a smooth scroll
+- [X] Add a smooth scroll
 - [X] Add projects data
-- [ ] Fix scroll cursor
+- [X] Fix scroll cursor
 - [X] Organize as template for projectsList (one element)
 - [X] Organize with data for projectsList
-- [ ] Remove unreleased project
-- [ ] Mutation when refresh on a case
-- [ ] Remove useless block in "Selected Projects"
+- [X] Remove unreleased project
+- [X] Mutation when refresh on a case
+- [X] Remove useless block in "Selected Projects"

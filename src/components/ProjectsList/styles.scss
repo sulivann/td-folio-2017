@@ -2,12 +2,20 @@
 
 .projectsList {
   font-size:0.9375rem;
+
+  @media screen and (min-width:1600px) {
+    font-size:17px;
+  }
 }
 
 .projectsList__container {
   display:flex;
   justify-content:space-between;
   margin-bottom:0.9375rem;
+
+  @media screen and (min-width:1600px) {
+    margin-bottom:18px;
+  }
 }
 
 
@@ -41,6 +49,10 @@
       left:calc(100% - 14px);
       transition:all 500ms cubic-bezier(0.62, 0.26, 0, 1.02);
     }
+  }
+
+  @media screen and (min-width:1600px) {
+    height:17px;
   }
 }
 
@@ -175,6 +187,10 @@
   &:hover {
     opacity:0.6;
     transition:all 750ms ease-out;
+  }
+
+  @media screen and (min-width:1600px) {
+    height:17px;
   }
 }
 

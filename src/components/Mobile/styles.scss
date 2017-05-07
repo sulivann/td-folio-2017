@@ -1,13 +1,12 @@
 @import '~stylesheets/common/variables';
 @import '~stylesheets/common/mixins';
 
-.about {
+.mobile {
   width:85.8%;
   margin:0 auto;
   margin-top:70px;
-  display:flex;
-  justify-content:space-between;
   min-height:100vh;
+  display:none;
 
   @media screen and (max-width:790px) {
     display:block;
@@ -20,10 +19,6 @@
 
   @media screen and (max-width:800px) {
     display:none;
-  }
-
-  @media screen and (min-width:1600px) {
-    font-size:17px;
   }
 }
 
@@ -94,10 +89,5 @@
   a {
     font-size:0.938rem;
     color:$white-soft;
-
-    &:hover {
-      opacity:0.4;
-      transition:opacity 750ms ease-out;
-    }
   }
 }

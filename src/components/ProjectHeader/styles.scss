@@ -18,6 +18,11 @@
     height:16px;
     overflow:hidden;
 
+    @media screen and (min-width:1600px) {
+      font-size:17px;
+      height:17px;
+    }
+
     &:hover {
       transition:opacity 750ms ease-out;
       opacity:0.6;
@@ -131,6 +136,10 @@
   font-weight:500;
   font-size:0.813rem;
 
+  @media screen and (min-width:1600px) {
+    font-size:15px;
+  }
+
   li:not(:last-child) {
     margin-right:3.750rem;
   }
@@ -153,4 +162,9 @@
   line-height:1.406rem;
   font-weight:500;
   max-width:500px;
+
+  @media screen and (min-width:1600px) {
+    font-size:17px;
+    line-height:25px;
+  }
 }

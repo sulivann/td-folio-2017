@@ -24,6 +24,10 @@
   height:15px;
   overflow:hidden;
   margin-top:70px;
+
+  @media screen and (min-width:1600px) {
+    height:17px;
+  }
 }
 
 .projectRightSide__selectedNumber {
@@ -33,6 +37,10 @@
   display:block;
 
   transform:translate3d(0, 100%, 0);
+
+  @media screen and (min-width:1600px) {
+    font-size:17px;
+  }
 }
 
 .projectRightSide__selectedNumber--enter {

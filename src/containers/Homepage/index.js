@@ -36,6 +36,7 @@ import projectsData from 'config/projectsData';
 import LogoLoader from 'components/LogoLoader';
 import ProjectsLeftSide from 'components/ProjectsLeftSide';
 import ProjectsRightSide from 'components/ProjectsRightSide';
+import Mobile from 'components/Mobile';
 
 export default Vue.extend({
 
@@ -352,11 +353,11 @@ export default Vue.extend({
       this.progress = event.progress*0.01;
       const loaderLogo = document.querySelector('.logoLoader__logo');
 
-      this.timeline.to(loaderLogo, 0.9, {
+      this.timeline.to(loaderLogo, 0.8, {
         opacity: this.progress
       });
 
-      this.timeline.to(loaderLogo, 0.9, {
+      this.timeline.to(loaderLogo, 0.8, {
         opacity: 0.1
       });
     },
@@ -365,9 +366,25 @@ export default Vue.extend({
       const loaderLogo = document.querySelector('.logoLoader__logo');
       const logoLoader = document.querySelector('.logoLoader');
 
-      this.timeline.progress(1, false);
+      if(this.timeline.progress() <= 2) {
+        this.timeline.progress(1, false);
+        this.timeline.to(loaderLogo, 0.8, {
+          opacity: 0.5
+        });
+        this.timeline.to(loaderLogo, 0.8, {
+          opacity: 0.1
+        });
+        this.timeline.to(loaderLogo, 0.8, {
+          opacity: 0.8
+        });
+        this.timeline.to(loaderLogo, 0.8, {
+          opacity: 0.1
+        });
+      } else {
+        this.timeline.progress(1, false);
+      }
 
-      this.timeline.to(loaderLogo, 0.9, {
+      this.timeline.to(loaderLogo, 0.8, {
         opacity: 1
       });
 
@@ -390,6 +407,7 @@ export default Vue.extend({
   components: {
     'logo-loader': LogoLoader,
     'projects-left-side': ProjectsLeftSide,
-    'projects-right-side': ProjectsRightSide
+    'projects-right-side': ProjectsRightSide,
+    'mobile': Mobile
   }
 });
