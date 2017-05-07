@@ -9,6 +9,8 @@ import {
   WINDOW_RESIZE
 } from 'config/messages';
 
+import Mobile from 'components/Mobile';
+
 export default Vue.extend({
 
   mixins: [ EventManagerMixin, FadeTransitionMixin ],
@@ -46,5 +48,7 @@ export default Vue.extend({
 
   },
 
-  components: {}
+  components: {
+    'mobile': Mobile
+  }
 });

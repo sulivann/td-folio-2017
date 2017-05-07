@@ -94,7 +94,15 @@ export default Vue.extend({
 
   ready() {
     if(!this.assets) {
-      this.load();
+      setTimeout(() => {
+        const logo = document.querySelector('.logoLoader__logo');
+
+        logo.classList.add('logoLoader__logo--enter');
+
+      }, 500);
+      setTimeout(() => {
+        this.load();
+      }, 1250);
     }
     else {
       this.initEvents();

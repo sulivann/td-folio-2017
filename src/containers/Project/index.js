@@ -92,7 +92,15 @@ export default Vue.extend({
 
   ready() {
     if(!this.assets) {
-      this.load();
+      setTimeout(() => {
+        const logo = document.querySelector('.logoLoader__logo');
+
+        logo.classList.add('logoLoader__logo--enter');
+
+      }, 500);
+      setTimeout(() => {
+        this.load();
+      }, 1250);
     }
     else {
       this.initEvents();
@@ -163,7 +171,7 @@ export default Vue.extend({
       const projectEnd = document.querySelector('.preview');
       //const projectShow = document.querySelector('.projectShow');
 
-      if ((projectEnd.getBoundingClientRect().top - window.innerHeight) < -172) {
+      if ((projectEnd.getBoundingClientRect().top - window.innerHeight) < 0) {
         let scrollProgress = (Math.abs(projectEnd.getBoundingClientRect().top - window.innerHeight)/(projectEnd.getBoundingClientRect().height)).toFixed(2);
 
         if(scrollProgress >= 1) {
@@ -192,7 +200,7 @@ export default Vue.extend({
       });
 
       let currentY = 0;
-      this.scrollEasing = 0.238;
+      this.scrollEasing = 0.11;
 
       let run = () => {
         this.request = requestAnimationFrame(run);

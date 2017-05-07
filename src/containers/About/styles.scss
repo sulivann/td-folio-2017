@@ -10,7 +10,7 @@
   min-height:100vh;
 
   @media screen and (max-width:790px) {
-    display:block;
+    display:none;
   }
 }
 
@@ -42,6 +42,10 @@
 
   &:first-child {
     margin-right:1.5rem;
+  }
+
+  @media screen and (max-width:800px) {
+    display:block;
   }
 }
 
@@ -99,5 +103,9 @@
       opacity:0.4;
       transition:opacity 750ms ease-out;
     }
+  }
+
+  @media screen and (max-width:800px) {
+    display:block;
   }
 }

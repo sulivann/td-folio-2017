@@ -9,9 +9,14 @@
 }
 
 .logoLoader__logo {
-  font-family:$font-logo;
-  font-weight:700;
-  font-size:2.875rem;
-  color:$color-white;
+  opacity:0;
+
+  svg {
+    width:100px;
+  }
+}
+
+.logoLoader__logo--enter {
   opacity:0.1;
+  transition:opacity 750ms ease-out;
 }

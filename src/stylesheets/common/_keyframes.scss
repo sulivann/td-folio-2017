@@ -6,3 +6,9 @@
     transform:translate3d(0, 0, 0);
   }
 }
+
+@keyframes logo-fade {
+  to {
+    opacity:0.1;
+  }
+}
