@@ -44,7 +44,7 @@ const projectsData = [
     env: 'personal project',
     selected: false,
     released: true,
-    imageCover: 'VISUS_ANAIS.jpg',
+    imageCover: 'VISUS_ANAISPROFIT.png',
     desc:'Anaïs is a french Graphic Designer based in Paris, specialized in print design and manual works such as paper works. We worked in collaboration in order to think of a way to showcase all of her creations into a portfolio.',
     show: [
       {
@@ -144,7 +144,7 @@ const projectsData = [
     type: 'app',
     selected: false,
     released: true,
-    imageCover: 'VISUS_MOODIE.jpg',
+    imageCover: 'VISUS_MOODIE.png',
     desc: 'Moodie is an app based on your mobile applications & working with philips hue technology. Based on your activity, the song you play or you’re heartbeat : moodie adapt the light to suit your needs.',
     show: [
       {

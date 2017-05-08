@@ -23,29 +23,44 @@
   }
 
   @media screen and (min-width:1600px) {
-    font-size:17px;
+    font-size:16px;
   }
 }
 
 .about__link {
   display:inline-block;
   cursor:pointer;
+  height:15px;
+  overflow:hidden;
 
   a {
     color:$gray-mine-shaft;
-    transition:opacity 300ms ease-out;
+    transform:translate3d(0, 100%, 0);
+    display:block;
 
     &:hover {
       opacity:0.6;
+      transition:opacity 300ms ease-out;
     }
   }
 
   &:first-child {
     margin-right:1.5rem;
+
+    a {
+      transition-delay:100ms;
+    }
   }
 
-  @media screen and (max-width:800px) {
-    display:block;
+  @media screen and (min-width:1600px) {
+    height:17px;
+  }
+}
+
+.about__link--enter {
+  a {
+    transform:translate3d(0, 0, 0);
+    transition:transform 650ms ease-out;
   }
 }
 
@@ -57,6 +72,7 @@
   line-height:45px;
   margin-right:10%;
   margin-top:8%;
+  opacity:0;
 
   p:nth-child(2) {
     margin-top:6%;
@@ -80,6 +96,11 @@
     margin-top:15%;
     min-width:auto;
   }
+}
+
+.about__content--enter {
+  opacity:1;
+  transition:opacity 750ms ease-out;
 }
 
 .dev {

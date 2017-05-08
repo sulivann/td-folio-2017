@@ -1,24 +1,12 @@
 import { TweenMax, Expo } from 'gsap';
 
 /*
- *  ==== FadeTransitionMixin ====
+ *  === FadeTransitionMixin ====
  */
 
 const FadeTransitionMixin = {
 
   route: {
-
-    activate: function( { next } ) {
-
-      TweenMax.fromTo(this.$el, 0.7, {
-        opacity: 0
-      }, {
-        opacity: 1,
-        ease: Expo.easeOut
-      });
-
-      next();
-    },
 
     deactivate: function( { next } ) {
 

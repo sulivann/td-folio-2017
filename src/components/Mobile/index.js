@@ -29,6 +29,9 @@ export default Vue.extend({
 
     setTimeout(() => {
       this.smoothScroll();
+
+      const content = document.querySelector('.about__content.isMobile');
+      content.classList.add('about__content--enter');
     }, 500);
   },
 

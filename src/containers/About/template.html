@@ -1,14 +1,21 @@
 <div class="about-cont">
+
+  <mobile></mobile>
+
   <div class="about">
 
     <nav class="about__nav">
       <ul>
-        <li class="about__link"><a class="about__close"  v-on:click="goBack">Close</a></li>
-        <li class="about__link"><a class="about__works" v-link='{name: "home"}'>Works</a></li>
+        <li class="about__link">
+          <a class="about__close"  v-on:click="goBack">Close</a>
+        </li>
+        <li class="about__link">
+          <a class="about__works" v-link='{name: "home"}'>Works</a>
+        </li>
       </ul>
     </nav>
 
-    <div class="about__content">
+    <div class="about__content isDesktop">
       <p>My name is Taing David, I am an interactive designer living in Paris. Previously working @30dirtyfingers. Currently Studying @Hetic, and doing freelance work for 2 Years now.</p>
       <p>This portfolio was developped by <span class="dev">Sulivan Nguyen</span>, and we both are looking for a 4 months internship from July to October.</p>
       <ul class="about__socials">
@@ -22,6 +29,4 @@
 
 
   </div>
-
-  <mobile></mobile>
 </div>

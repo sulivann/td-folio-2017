@@ -5,10 +5,6 @@ import './styles.scss';
 import EventManagerMixin from 'mixins/EventManagerMixin';
 import FadeTransitionMixin from 'mixins/FadeTransitionMixin';
 
-import {
-  WINDOW_RESIZE
-} from 'config/messages';
-
 import Mobile from 'components/Mobile';
 
 export default Vue.extend({
@@ -16,11 +12,6 @@ export default Vue.extend({
   mixins: [ EventManagerMixin, FadeTransitionMixin ],
 
   template: require( './template.html' ),
-
-  emitterEvents: [{
-    message: WINDOW_RESIZE,
-    method: 'onWindowResize'
-  }],
 
   data() {
 
@@ -31,16 +22,21 @@ export default Vue.extend({
   },
 
   created() {
+    setTimeout(() => {
+      const content = document.querySelector('.about__content.isDesktop');
 
+      content.classList.add('about__content--enter');
+    }, 500);
+    setTimeout(() => {
+      const nav = document.querySelectorAll('.about__link');
+
+      for (const elm of nav) {
+        elm.classList.add('about__link--enter');
+      }
+    }, 700);
   },
 
   methods: {
-
-    onWindowResize( {width, height} ) {
-      /*eslint-disable */
-      console.log( `Window resize from application with debounce -> width: ${width}px || height: ${ height }` );
-      /*eslint-enable */
-    },
 
     goBack() {
       window.history.back();

@@ -45,7 +45,22 @@ export default Vue.extend({
 
   ready() {},
 
-  methods: {},
+  methods: {
+
+    changePage(page) {
+      const project = document.querySelector('.project');
+
+      project.classList.add('project--out');
+
+      setTimeout(() => {
+        if (page == 'works') {
+          this.$router.go('/');
+        } else if (page == 'about') {
+          this.$router.go('/about');
+        }
+      }, 700);
+    }
+  },
 
   transitions: {},
 
