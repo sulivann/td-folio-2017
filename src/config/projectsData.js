@@ -6,10 +6,11 @@ const projectsData = [
     type: 'redesign',
     date: '2016',
     env: 'school project',
+    role: 'redesign, ui/ux design',
     selected: true,
     released: true,
     imageCover: 'VISUS_BOUCHERON.jpg',
-    desc:'The House of Boucheron is a French family dynasty founded by Frederic Boucheron in 1858. Boucheron makes watches, jewellery, and licenses its marque for perfumes. We were asked to rethink Boucheron digital presence by bringing clarity, luxury and an high-end approach to the current website.',
+    desc:'The House of Boucheron makes watches, jewellery, and licenses its marque for perfumes. We were asked to rethink Boucheron digital presence by bringing clarity, luxury and an high-end approach to the current website.',
     show: [
       {
         image: 'BOUCHERON_1.jpg',
@@ -42,6 +43,7 @@ const projectsData = [
     type: 'portfolio',
     date: '2016',
     env: 'personal project',
+    role: 'art direction, web design',
     selected: false,
     released: true,
     imageCover: 'VISUS_ANAISPROFIT.png',
@@ -85,11 +87,12 @@ const projectsData = [
     slug: 'airfrance',
     date: 'early 2016',
     env: 'school project',
+    role: 'redesign, ux design',
     type: 'app',
     selected: false,
     released: true,
     imageCover: 'VISUS_AIRFRANCE.jpg',
-    desc: 'Air France is an airline company which main activities are passenger transport, cargo and aircraft services. Their current app needed to be refreshed in order for users to have an easier access to the content  they are looking for. Also, we had to base our work on Air France’s visual identity guidelines.',
+    desc: 'Air France is an airline company which main activities are passenger transport, cargo and aircraft services. Their current app needed to be refreshed in order for users to have an easier access to the content they are looking for - with Michael Zaccardi',
     show: [
       {
         image: 'AIRFRANCE_1.jpg',
@@ -121,19 +124,35 @@ const projectsData = [
       },
       {
         image: 'AIRFRANCE_8.jpg'
-      },
-      {
-        image: 'AIRFRANCE_9.jpg'
       }
     ]
   },
   {
     id: '4',
-    name: 'Repoleak - soon',
+    name: 'Repoleak',
     slug: 'repoleak',
+    date: '2016 until now',
+    env: 'personal project',
+    role: 'mobile design',
+    type: 'app',
     selected: false,
-    released: false,
-    imageCover: 'VISUS_REPOLEAK.jpg'
+    released: true,
+    imageCover: 'VISUS_REPOLEAK.jpg',
+    desc: 'Repoleak is an application that helps jailbroken iphone users to find their packages faster and easier. The objective is to give the users a smooth experience which will allow them to access and find what content suits them the most.',
+    show: [
+      {
+        image: 'REPOLEAK_1.jpg'
+      },
+      {
+        image: 'REPOLEAK_2.jpg'
+      },
+      {
+        image: 'REPOLEAK_3.jpg'
+      },
+      {
+        image: 'REPOLEAK_4.jpg'
+      }
+    ]
   },
   {
     id: '5',
@@ -141,6 +160,7 @@ const projectsData = [
     slug: 'moodie',
     date: '2016',
     env: 'school project',
+    role: 'mobile design',
     type: 'app',
     selected: false,
     released: true,
