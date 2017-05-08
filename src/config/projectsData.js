@@ -150,7 +150,7 @@ const projectsData = [
         image: 'REPOLEAK_3.jpg'
       },
       {
-        image: 'REPOLEAK_4.jpg'
+        image: 'REPOLEAK_4.png'
       }
     ]
   },
