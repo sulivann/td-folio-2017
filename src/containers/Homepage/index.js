@@ -356,7 +356,7 @@ export default Vue.extend({
 
     },
 
-    onLoadProgress: function(event) {
+    onLoadProgress(event) {
       this.progress = event.progress*0.01;
       const loaderLogo = document.querySelector('.logoLoader__logo');
 
@@ -369,7 +369,7 @@ export default Vue.extend({
       });
     },
 
-    onLoadComplete: function() {
+    onLoadComplete() {
       const loaderLogo = document.querySelector('.logoLoader__logo');
       const logoLoader = document.querySelector('.logoLoader');
 
@@ -377,12 +377,6 @@ export default Vue.extend({
         this.timeline.progress(1, false);
         this.timeline.to(loaderLogo, 0.8, {
           opacity: 0.5
-        });
-        this.timeline.to(loaderLogo, 0.8, {
-          opacity: 0.1
-        });
-        this.timeline.to(loaderLogo, 0.8, {
-          opacity: 0.8
         });
         this.timeline.to(loaderLogo, 0.8, {
           opacity: 0.1
