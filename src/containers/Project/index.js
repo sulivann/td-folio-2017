@@ -175,7 +175,7 @@ export default Vue.extend({
       if ((projectEnd.getBoundingClientRect().top - window.innerHeight) < 0) {
         let scrollProgress = (Math.abs(projectEnd.getBoundingClientRect().top - window.innerHeight)/(projectEnd.getBoundingClientRect().height)).toFixed(2);
 
-        if(scrollProgress >= 0.96) {
+        if(scrollProgress >= 0.98) {
           this.updateFromCase();
           this.changeProject(this.returnNextProject());
           this.$router.go('/');
