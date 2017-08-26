@@ -205,7 +205,7 @@ export default Vue.extend({
       });
 
       let currentY = 0;
-      this.scrollEasing = 0.11;
+      this.scrollEasing = 0.07;
 
       let run = () => {
         this.request = requestAnimationFrame(run);
