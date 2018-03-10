@@ -7,7 +7,7 @@
 }
 
 .projectsRightSide--enter {
-  transition:width 750ms ease-out;
+  transition:width 500ms ease-out 300ms;
   width:37%;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .projectRightSide__selectedNumber--enter {
-  transition:transform 650ms ease-out;
+  transition:transform 300ms ease;
   transform:translate3d(0, 0, 0);
 }
 
@@ -103,7 +103,7 @@
     }
 
     .projectsRightSide__typo--enter {
-      transition:transform 750ms ease-out;
+      transition:transform 500ms ease 200ms;
       transform:translate3d(0, 0, 0);
     }
   }

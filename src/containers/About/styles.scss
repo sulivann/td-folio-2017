@@ -60,7 +60,7 @@
 .about__link--enter {
   a {
     transform:translate3d(0, 0, 0);
-    transition:transform 650ms ease-out;
+    transition:transform 300ms ease;
   }
 }
 

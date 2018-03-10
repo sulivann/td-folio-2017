@@ -45,7 +45,7 @@
 
 .projectsLeftSide__about--enter {
   transform:translate3d(0, 0, 0);
-  transition:transform 650ms ease-out;
+  transition:transform 300ms ease;
 }
 
 .projectsLeftSide__container {
@@ -66,7 +66,7 @@
 }
 
 .projectsLeftSide__cover--enter {
-  transition:transform 1130ms ease-out;
+  transition:transform 600ms ease;
   transform:translate3d(0, 0, 0);
 }
 
