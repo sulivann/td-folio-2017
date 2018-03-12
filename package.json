@@ -25,6 +25,7 @@
   "scripts": {
     "lint": "eslint .",
     "start": "cross-env NODE_ENV=development PORT=3000 babel-node server",
+    "prod": "cross-env NODE_ENV=production PORT=3000 babel-node server",
     "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.config.babel.js --progress --profile --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
