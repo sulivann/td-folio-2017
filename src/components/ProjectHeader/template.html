@@ -15,6 +15,14 @@
 
   <div class="projectHeader__wrapper">
 
+    <div class="projectHeader__image">
+      <img
+        v-for="(index, element) in projectData.show"
+        v-if="index === 0"
+        :src="'./images/'+element.image"
+        alt="">
+    </div>
+
     <div class="projectHeader__presentation">
       <div class="projectHeader__title">
         <div class="projectHeader__titleContainer">
@@ -29,17 +37,18 @@
 
       <div class="projectHeader__description">
         <div class="projectHeader__descriptionContainer">
-          <ul class="projectHeader__details">
-            <li>0{{projectData.id}} - {{projectData.env}}</li>
-            <li>{{projectData.role}}</li>
-            <li>{{projectData.date}}</li>
-          </ul>
 
-          <div class="projectHeader__separator"></div>
+          <!-- <div class="projectHeader__separator"></div> -->
 
           <p class="projectHeader__excerpt">
             {{projectData.desc}}
           </p>
+
+          <ul class="projectHeader__details">
+            <li>{{projectData.env}}</li>
+            <li>{{projectData.role}}</li>
+            <li>{{projectData.date}}</li>
+          </ul>
         </div>
       </div>
 
