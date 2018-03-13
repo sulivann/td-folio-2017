@@ -2,23 +2,19 @@
 
   <div class="projectShow__element" v-for="(index, element) in projectData.show">
 
-    <div v-if="index !== 0">
+    <div class="projectShow__imageContainer--centered" v-if="element.type == 'centered'">
 
-      <div class="projectShow__imageContainer--centered" v-if="element.type == 'centered'">
+      <img class="projectShow__image" v-bind:src="'./images/'+element.image" v-else>
 
-        <img class="projectShow__image" v-bind:src="'./images/'+element.image" v-else>
+      <div class="projectShow__mask"></div>
 
-        <div class="projectShow__mask"></div>
+    </div>
 
-      </div>
+    <div class="projectShow__imageContainer" v-else>
 
-      <div class="projectShow__imageContainer" v-else>
+      <img class="projectShow__image" v-bind:src="'./images/'+element.image" v-else>
 
-        <img class="projectShow__image" v-bind:src="'./images/'+element.image" v-else>
-
-        <div class="projectShow__mask"></div>
-
-      </div>
+      <div class="projectShow__mask"></div>
 
     </div>
 

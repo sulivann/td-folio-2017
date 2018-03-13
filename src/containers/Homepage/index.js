@@ -52,10 +52,7 @@ export default Vue.extend({
     './images/VISUS_ANAISPROFIT.png',
     './images/VISUS_BOUCHERON.jpg',
     './images/VISUS_MOODIE.png',
-    './images/VISUS_REPOLEAK.jpg',
-    './fonts/maisonneue-book-webfont.woff2',
-    './fonts/maisonneue-demi-webfont.woff2',
-    './fonts/maisonneue-medium-webfont.woff2'
+    './images/VISUS_REPOLEAK.jpg'
   ],
 
 

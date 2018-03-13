@@ -1,129 +1,82 @@
 const projectsData = [
   {
     id: '1',
-    name: 'Boucheron',
-    slug: 'boucheron',
-    type: 'redesign',
-    date: '2016',
-    env: 'School project',
-    role: 'Redesign, ui/ux design',
+    name: 'Google x Harry Poter',
+    slug: 'harrypoter',
+    type: '',
+    date: '2017',
+    env: 'MediaMonks',
+    role: 'Visual Design',
     selected: true,
     released: true,
-    imageCover: 'VISUS_BOUCHERON.jpg',
-    desc:'The House of Boucheron makes watches, jewellery, and licenses its marque for perfumes. We were asked to rethink Boucheron digital presence by bringing clarity, luxury and an high-end approach to the current website.',
+    imageCover: '1.cover.jpg',
+    desc:'During my internship at MediaMonks, I got the great opportunity to work on Google x Harry Potter project along with our lead designer Kiegwan Leihitu. The idea behind this project was to create an augmented reality application which would be used for the Harry Potter exhibition at the british library. I worked in close collaboration with the UX team aswell as the art direction of the application.',
     show: [
       {
-        image: 'BOUCHERON_1.jpg',
-        label: 'Putting Boucheron’s know-how & popular products into the spotlight.'
+        image: '1.1.jpg'
       },
       {
-        image: 'BOUCHERON_2.jpg',
-        label: 'Built on a specific grid system.'
+        image: '1.2.jpg'
       },
       {
-        image: 'BOUCHERON_3.jpg'
+        image: '1.3.jpg'
       },
       {
-        image: 'BOUCHERON_4.jpg',
-        label: 'Type anywhere to search a product.'
+        image: '1.4.jpg'
       },
       {
-        image: 'BOUCHERON_5.jpg',
-        label: 'Focusing on the product by allowing 360° view & imagery layout.'
+        image: '1.5.jpg'
       },
       {
-        image: 'BOUCHERON_6.jpg'
+        image: '1.6.jpg'
       }
     ]
   },
   {
     id: '2',
-    name: 'Anaïs Profit',
-    slug: 'anais-profit',
+    name: 'Ernest Ménard',
+    slug: 'ernest-menard',
     type: 'portfolio',
-    date: '2016',
-    env: 'personal project',
-    role: 'art direction, web design',
+    date: '2018',
+    env: 'freelance',
+    role: 'art direction',
     selected: false,
     released: true,
-    imageCover: 'VISUS_ANAISPROFIT.png',
-    desc:'Anaïs is a french Graphic Designer based in Paris, specialized in print design and manual works such as paper works. We worked in collaboration in order to think of a way to showcase all of her creations into a portfolio.',
+    imageCover: '2.cover.jpg',
+    desc:'Ernest menard is a high-end furniture company. I recreated the visual identity of their website by giving a clean and aesthetic layout where product imagery is showcased at it best. Ernest’s products are made with high quality woods. The whole interface had to have this clean and clear layout inspired from nature and its perfect shapes.',
     show: [
       {
-        image: 'ANAISPROFIT_1.jpg'
+        image: '2.1.jpg'
       },
       {
-        image: 'ANAISPROFIT_2.jpg',
-        label: 'Working on balance, white space & imagery.'
+        image: '2.2.jpg'
       },
       {
-        image: 'ANAISPROFIT_3.jpg'
+        image: '2.3.jpg'
       },
       {
-        image: 'ANAISPROFIT_4.jpg'
-      },
-      {
-        image: 'ANAISPROFIT_5.jpg'
-      },
-      {
-        image: 'ANAISPROFIT_6.jpg',
-        label: 'Enabling horizontal scrolling.'
-      },
-      {
-        image: 'ANAISPROFIT_7.jpg'
-      },
-      {
-        image: 'ANAISPROFIT_8.jpg'
-      },
-      {
-        image: 'ANAISPROFIT_9.jpg',
-        label: 'Making it simple so the works showcased are the primary interest.'
+        image: '2.4.jpg'
       }
     ]
   },
   {
     id: '3',
-    name: 'Airfrance',
-    slug: 'airfrance',
-    date: 'early 2016',
-    env: 'school project',
-    role: 'redesign, ux design',
+    name: 'Samsung Concept',
+    slug: 'samsung-concept',
+    date: 'Early 2018',
+    env: 'Side project',
+    role: 'Visual design',
     type: 'app',
     selected: false,
     released: true,
-    imageCover: 'VISUS_AIRFRANCE.jpg',
-    desc: 'Air France is an airline company which main activities are passenger transport, cargo and aircraft services. Their current app needed to be refreshed in order for users to have an easier access to the content they are looking for - with Michael Zaccardi',
+    imageCover: '3.cover.jpg',
+    desc: 'Samsung charging strap is a conceptual product I discovered on behance. It was designed by Yuna Nam, Garim Kim and hyunmook lim. The process and design behind this product really inspired me and therefore I worked on it as a side project.',
     show: [
       {
-        image: 'AIRFRANCE_1.jpg',
-        label: 'Looking through the app flow.'
+        image: '3.1.jpg'
       },
       {
-        image: 'AIRFRANCE_2.jpg'
-      },
-      {
-        image: 'AIRFRANCE_3.jpg',
-        type: 'double-paragraph',
-        firstLabel: 'After some initial sketches on paper, hi-fi wireframes were built after several shots.',
-        secondLabel: '- We redesigned the flight booking process to fit into one screen.'
-      },
-      {
-        image: 'AIRFRANCE_4.jpg'
-      },
-      {
-        image: 'AIRFRANCE_5.jpg'
-      },
-      {
-        image: 'AIRFRANCE_6.jpg',
-        type: 'centered',
-        firstLabel: 'Flight results are displayed with tags to show the ones with the lowest prices.',
-        secondLabel: 'Users can quickly change dates to check for any other convenient dates.'
-      },
-      {
-        image: 'AIRFRANCE_7.jpg'
-      },
-      {
-        image: 'AIRFRANCE_8.jpg'
+        image: '3.2.jpg'
       }
     ]
   },
@@ -131,55 +84,50 @@ const projectsData = [
     id: '4',
     name: 'Repoleak',
     slug: 'repoleak',
-    date: '2016 until now',
-    env: 'personal project',
-    role: 'mobile design',
+    date: '2015 - 2017',
+    env: 'Freelance',
+    role: 'Product Design',
     type: 'app',
     selected: false,
     released: true,
-    imageCover: 'VISUS_REPOLEAK.jpg',
-    desc: 'Repoleak is an application that helps jailbroken iphone users to find their packages faster and easier. The objective is to give the users a smooth experience which will allow them to access and find what content suits them the most.',
+    imageCover: '4.cover.jpg',
+    desc: 'I joined Repoleak’s team in early 2015 and have been working on the product as a product designer for the past 2 years. Along with the team, we improved the whole experience based on research and data, and thought of the redesign of the app in order to solve the problematics issued. Repoleak is an application that was initially created in order to help jailbroken users finding the tweaks they needed and therefore gaining time.',
     show: [
       {
-        image: 'REPOLEAK_1.jpg'
+        image: '4.1.jpg'
       },
       {
-        image: 'REPOLEAK_2.jpg'
+        image: '4.2.jpg'
       },
       {
-        image: 'REPOLEAK_3.jpg'
-      },
-      {
-        image: 'REPOLEAK_4.png'
+        image: '4.3.jpg'
       }
     ]
   },
   {
     id: '5',
-    name: 'Moodie',
-    slug: 'moodie',
-    date: '2016',
-    env: 'school project',
-    role: 'mobile design',
+    name: 'Nike',
+    slug: 'nike-hyperadapt',
+    date: 'Early 2017',
+    env: 'Side project',
+    role: 'Visual design',
     type: 'app',
     selected: false,
     released: true,
-    imageCover: 'VISUS_MOODIE.png',
-    desc: 'Moodie is an app based on your mobile applications & working with philips hue technology. Based on your activity, the song you play or you’re heartbeat : moodie adapt the light to suit your needs.',
+    imageCover: '5.cover.jpg',
+    desc: 'During my free time I decided to design some quick shots around Nike’s new product : the hyperadapt shoe. The whole idea behind this was basically to design some dynamic and interactive interface where we could see the shoes in parralax and floating around.',
     show: [
       {
-        image: 'MOODIE_1.jpg',
-        label: 'Automatically detecting your mood - if false, you might select the correct one.'
+        image: '5.1.jpg'
       },
       {
-        image: 'MOODIE_2.jpg',
-        label: 'Choose what applications to connect to the lamp'
+        image: '5.2.jpg'
       },
       {
-        image: 'MOODIE_3.jpg'
+        image: '5.3.jpg'
       },
       {
-        image: 'MOODIE_4.jpg'
+        image: '5.4.jpg'
       }
     ]
   }

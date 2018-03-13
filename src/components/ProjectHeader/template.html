@@ -17,21 +17,19 @@
 
     <div class="projectHeader__image">
       <img
-        v-for="(index, element) in projectData.show"
-        v-if="index === 0"
-        :src="'./images/'+element.image"
+        :src="'./images/'+ projectData.imageCover"
         alt="">
     </div>
 
     <div class="projectHeader__presentation">
       <div class="projectHeader__title">
         <div class="projectHeader__titleContainer">
-          <div class="projectHeader__titleMask">
+          <!-- <div class="projectHeader__titleMask"> -->
             <div class="projectHeader__titleTypo">{{projectData.name}}</div>
-          </div>
-          <div class="projectHeader__titleMask">
+          <!-- </div> -->
+          <!-- <div class="projectHeader__titleMask">
             <div class="projectHeader__titleTypo">{{projectData.type}}</div>
-          </div>
+          </div> -->
         </div>
       </div>
 
