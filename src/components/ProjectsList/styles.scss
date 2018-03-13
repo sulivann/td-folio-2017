@@ -11,7 +11,7 @@
 .projectsList__container {
   display:flex;
   justify-content:space-between;
-  margin-bottom:0.9375rem;
+  margin-bottom:0.8rem;
 
   @media screen and (min-width:1600px) {
     margin-bottom:18px;
@@ -20,7 +20,7 @@
 
 
 .projectsList__name--selected {
-  height:15px;
+  height:17px;
   overflow:hidden;
   position:relative;
   padding-left:0px;
@@ -57,7 +57,7 @@
 }
 
 .projectsList__name--selectedIsLoaded {
-  height:15px;
+  height:17px;
   overflow:hidden;
   position:relative;
   padding-left:0px;
@@ -128,6 +128,7 @@
 }
 
 .projectsList__name--previous {
+  height: 17px;
   color:$black-mine-shaft;
   font-weight:400;
   cursor:pointer;
@@ -144,6 +145,7 @@
 }
 
 .projectsList__name {
+  height: 17px;
   color:$blue-ocean;
   font-weight:400;
   cursor:pointer;
@@ -156,6 +158,7 @@
 }
 
 .projectsList__name--isLoaded {
+  height: 17px;
   color:$blue-ocean;
   font-weight:400;
   cursor:pointer;
@@ -176,7 +179,7 @@
   display:block;
   font-weight:500;
   cursor:pointer;
-  height:15px;
+  height:17px;
   overflow:hidden;
 
   span {

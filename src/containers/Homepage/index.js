@@ -48,11 +48,11 @@ export default Vue.extend({
   },
 
   manifest: [
-    './images/VISUS_AIRFRANCE.jpg',
-    './images/VISUS_ANAISPROFIT.png',
-    './images/VISUS_BOUCHERON.jpg',
-    './images/VISUS_MOODIE.png',
-    './images/VISUS_REPOLEAK.jpg'
+    './images/1.cover.jpg',
+    './images/2.cover.jpg',
+    './images/3.cover.jpg',
+    './images/4.cover.jpg',
+    './images/5.cover.jpg'
   ],
 
 
