@@ -106,7 +106,7 @@ const projectsData = [
   },
   {
     id: '5',
-    name: 'Nike',
+    name: 'Nike Hyperadapt',
     slug: 'nike-hyperadapt',
     date: 'Early 2017',
     env: 'Side project',
