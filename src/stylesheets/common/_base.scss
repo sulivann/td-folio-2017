@@ -14,7 +14,10 @@ body {
 }
 
 html, body {
-  // overflow:hidden;
+
+  &.hidden {
+    overflow:hidden;
+  }
 }
 
 * {

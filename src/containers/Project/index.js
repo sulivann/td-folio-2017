@@ -246,6 +246,7 @@ export default Vue.extend({
     onLoadComplete() {
       const loaderLogo = document.querySelector('.logoLoader__logo');
       const logoLoader = document.querySelector('.logoLoader');
+      const htmlElm = document.querySelector('html');
 
       if(this.timeline.progress() <= 2) {
         this.timeline.progress(1, false);
@@ -270,6 +271,10 @@ export default Vue.extend({
           onComplete:this.loadProject
         }
       ), '+=0.5');
+
+      setTimeout(() => {
+        htmlElm.classList.remove('hidden');
+      }, 3000)
     },
 
     loadProject() {
