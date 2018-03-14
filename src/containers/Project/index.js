@@ -105,6 +105,11 @@ export default Vue.extend({
     else {
       this.initEvents();
     }
+
+    const htmlElm = document.querySelector('html');
+    const bodyElm = document.querySelector('body');
+    htmlElm.classList.remove('hidden');
+    bodyElm.classList.remove('hidden');
   },
 
   methods: {

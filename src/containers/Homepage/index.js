@@ -103,6 +103,11 @@ export default Vue.extend({
     else {
       this.initEvents();
     }
+
+    const htmlElm = document.querySelector('html');
+    const bodyElm = document.querySelector('body');
+    htmlElm.classList.add('hidden');
+    bodyElm.classList.add('hidden');
   },
 
   beforeDestroy() {
@@ -111,6 +116,11 @@ export default Vue.extend({
     document.removeEventListener('wheel', this.handleScrollDown);
     clearTimeout(this.timeout);
     this.resetFromCase();
+
+    const htmlElm = document.querySelector('html');
+    const bodyElm = document.querySelector('body');
+    htmlElm.classList.remove('hidden');
+    bodyElm.classList.remove('hidden');
   },
 
   methods: {
